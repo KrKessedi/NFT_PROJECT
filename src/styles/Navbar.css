@@ -1,0 +1,14 @@
+.menu-items {
+  transition: .5s;
+}
+
+.navbar {
+  background: rgb(18, 77, 179) !important;
+  box-shadow: inset 0 -50px 50px -25px rgb(255, 255, 0) !important;
+  color: black !important;
+  width: 90vw !important;
+  /* height: 6vw; */
+  margin: auto;
+  border-radius: 0 0 1vw 1vw;
+  padding: .6vw;
+}
