@@ -6,6 +6,8 @@ import NotFoundPage from './pages/NotFoundPage'
 import RegistrationPage from './pages/RegistrationPage'
 import Navbar from './components/Navbar'
 import LoginPage from './pages/LoginPage'
+import Basket from './components/posts/Basket'
+import PostList from './pages/PostsList'
 
 const MainRoutes = () => {
 	return (
@@ -17,6 +19,8 @@ const MainRoutes = () => {
 				<Route path='/add' element={<CreatePostPage />} />
 				<Route path='/reg' element={<RegistrationPage />} />
 				<Route path='/login' element={<LoginPage />} />
+				<Route path='/basket' element={<Basket />} />
+				<Route path='/list' element={<PostList />} />
 			</Routes>
 		</>
 	)

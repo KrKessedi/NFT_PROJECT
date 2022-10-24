@@ -1,8 +1,13 @@
 import React from 'react'
 import MainRoutes from './MainRoutes'
+import Navbar from './components/Navbar'
 
 const App = () => {
-	return <MainRoutes>App</MainRoutes>
+	return (
+		<MainRoutes>
+			<Navbar />
+		</MainRoutes>
+	)
 }
 
 export default App

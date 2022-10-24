@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem'
 import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin'
 import '../styles/Navbar.css'
 import { useNavigate } from 'react-router-dom'
+import { deepOrange } from '@mui/material/colors'
 
 // const pages = ['Nfts', 'Basket']
 
@@ -29,6 +30,10 @@ const pages = [
 	{
 		type: 'Add',
 		path: '/add',
+	},
+	{
+		type: '404',
+		path: '/*',
 	},
 ]
 
@@ -55,19 +60,22 @@ function ResponsiveAppBar() {
 
 	return (
 		<>
+			<div className='subNavbar'></div>
 			<AppBar position='static' className='navbar'>
 				<Container maxWidth='xl'>
-					<Toolbar disableGutters>
-						<CurrencyBitcoinIcon />
+					<Toolbar disableGutters className='wr'>
+						<CurrencyBitcoinIcon sx={{ color: 'white	' }} />
 						<Typography
 							onClick={() => navigate('/')}
-							className='glitch'
+							className='glitchTitle'
+							data-text='NFT'
 							variant='h6'
 							noWrap
 							component='a'
-							href='/'
 							sx={{
 								mr: 2,
+								ml: 2,
+								color: 'white',
 								display: { xs: 'none', md: 'flex' },
 								// fontFamily: 'monospace',
 								fontWeight: 700,
@@ -75,6 +83,7 @@ function ResponsiveAppBar() {
 								color: 'inherit',
 								textDecoration: 'none',
 							}}
+							style={{ cursor: 'pointer' }}
 						>
 							NFT
 						</Typography>
@@ -127,24 +136,27 @@ function ResponsiveAppBar() {
 							component='a'
 							href=''
 							sx={{
+								color: 'white',
 								mr: 2,
 								display: { xs: 'flex', md: 'none' },
 								flexGrow: 1,
 								fontFamily: 'monospace',
 								fontWeight: 700,
 								letterSpacing: '.3rem',
-								color: 'inherit',
 								textDecoration: 'none',
 							}}
+							onClick={() => navigate('/')}
+							style={{ cursor: 'pointer' }}
 						>
 							NFT
 						</Typography>
 						<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 							{pages.map(page => (
 								<Button
+									className='testing'
 									key={page.type}
 									onClick={() => navigate(page.path)}
-									sx={{ my: 2, color: 'white', display: 'block' }}
+									sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
 								>
 									{page.type}
 								</Button>
@@ -154,7 +166,11 @@ function ResponsiveAppBar() {
 						<Box sx={{ flexGrow: 0 }}>
 							<Tooltip title='Open settings'>
 								<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-									<Avatar alt='Remy Sharp' src='/static/images/avatar/2.jpg' />
+									<Avatar
+										sx={{ bgcolor: 'rgb(16,77,179)' }}
+										// alt={user}
+										variant='rounded'
+									/>
 								</IconButton>
 							</Tooltip>
 							<Menu
