@@ -59,7 +59,7 @@
   animation-direction: reverse-alternate;
 }
 
-.wrapper h1.glitch2 {
+.wrapper h1.glitch1 {
   color: rgb(255, 255, 255);
   font-family: sans-serif;
   font-weight: 800;
@@ -68,8 +68,8 @@
   padding: 30px;
 }
 
-.wrapper h1.glitch2::before,
-.wrapper h1.glitch2::after {
+.wrapper h1.glitch1::before,
+.wrapper h1.glitch1::after {
   padding: 30px;
   color: white;
   content: "Page";
@@ -81,7 +81,7 @@
   top: 0;
 }
 
-.wrapper h1.glitch2::before {
+.wrapper h1.glitch1::before {
   left: 3px;
   text-shadow: -2px 0 red;
   animation-name: glitch-animation-1;
@@ -92,7 +92,7 @@
   animation-direction: reverse-alternate;
 }
 
-.wrapper h1.glitch2::after {
+.wrapper h1.glitch1::after {
   left: -3px;
   text-shadow: -2px 0 blue;
   animation-name: glitch-animation-2;

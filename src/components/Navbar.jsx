@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem'
 import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin'
 import '../styles/Navbar.css'
 import { useNavigate } from 'react-router-dom'
-import { deepOrange } from '@mui/material/colors'
+import { useAuth } from '../contexts/AuthContextProvider'
 
 // const pages = ['Nfts', 'Basket']
 
@@ -38,6 +38,16 @@ const pages = [
 ]
 
 function ResponsiveAppBar() {
+	const { user, logout, checkAuthorization } = useAuth()
+
+	console.log(user)
+
+	useEffect(() => {
+		if (localStorage.getItem('token')) {
+			checkAuthorization()
+		}
+	}, [])
+
 	const [anchorElNav, setAnchorElNav] = React.useState(null)
 	const [anchorElUser, setAnchorElUser] = React.useState(null)
 
@@ -151,25 +161,40 @@ function ResponsiveAppBar() {
 							NFT
 						</Typography>
 						<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-							{pages.map(page => (
-								<Button
-									className='testing'
-									key={page.type}
-									onClick={() => navigate(page.path)}
-									sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
-								>
-									{page.type}
-								</Button>
-							))}
+							<Button
+								className='testing'
+								onClick={() => navigate('/')}
+								sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
+							>
+								List
+							</Button>
+							<Button
+								className='testing'
+								onClick={() => navigate(user ? '/basket' : '/login')}
+								sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
+								// disabled={user ? false : true}
+							>
+								Basket
+							</Button>
+							<Button
+								className='testing'
+								onClick={() => navigate(user ? '/add' : '/login')}
+								sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
+								// disabled={user ? false : true}
+							>
+								Add
+							</Button>
 						</Box>
 
 						<Box sx={{ flexGrow: 0 }}>
 							<Tooltip title='Open settings'>
 								<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
 									<Avatar
-										sx={{ bgcolor: 'rgb(16,77,179)' }}
-										// alt={user}
-										variant='rounded'
+										style={{ width: '4vw', height: '4vw', fontSize: '2vw' }}
+										sx={{ bgcolor: 'rgb(16,77,179)', maxWidth: '5vw' }}
+										alt={user[1]}
+										src='...'
+										// variant='rounded'
 									/>
 								</IconButton>
 							</Tooltip>
@@ -218,7 +243,9 @@ function ResponsiveAppBar() {
 									className='menu-items'
 									onClick={handleCloseUserMenu}
 								>
-									<Typography className='glitch'>Logout</Typography>
+									<Typography className='glitch' onClick={logout}>
+										Logout
+									</Typography>
 								</MenuItem>
 							</Menu>
 						</Box>

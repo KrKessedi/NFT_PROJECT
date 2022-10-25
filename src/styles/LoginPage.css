@@ -1,11 +1,11 @@
 @import url('http://fonts.cdnfonts.com/css/cyberpunk-is-not-dead');
 
-.registration-form {
+.login-form {
   /* background: #ffffff; */
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, black 15%, rgb(0, 128, 0, .4)), url(https://res.cloudinary.com/dokf7npvg/image/upload/v1540355245/0jbUKoX.jpg);
+  background: linear-gradient(180deg, black 14%, rgb(128, 0, 128, .5)), url(https://res.cloudinary.com/dokf7npvg/image/upload/v1540355245/0jbUKoX.jpg);
   background-position: center;
   background-size: cover;
   padding: 60px 30px;
@@ -16,11 +16,11 @@
   margin-top: -5.8vw;
 }
 
-.registration-form>* {
+.login-form>* {
   font-family: 'Cyberpunk Is Not Dead', sans-serif;
 }
 
-.registration-form:before {
+.login-form:before {
   content: "";
   position: fixed;
   top: 10vw;
@@ -88,7 +88,7 @@
   }
 }
 
-.form {
+.form-login {
   display: grid;
   grid-gap: 36px;
   align-items: center;
@@ -103,49 +103,49 @@
   animation: form-open 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s;
 }
 
-.form>* {
+.form-login>* {
   position: relative;
   opacity: 0;
   -webkit-animation: fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   animation: fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.form>*:nth-child(2) {
+.form-login>*:nth-child(2) {
   -webkit-animation-delay: 1.2s;
   animation-delay: 1.2s;
 }
 
-.form>*:nth-child(3) {
+.form-login>*:nth-child(3) {
   -webkit-animation-delay: 1.3s;
   animation-delay: 1.3s;
 }
 
-.form>*:nth-child(4) {
+.form-login>*:nth-child(4) {
   -webkit-animation-delay: 1.4s;
   animation-delay: 1.4s;
 }
 
-.form>*:nth-child(5) {
+.form-login>*:nth-child(5) {
   -webkit-animation-delay: 1.5s;
   animation-delay: 1.5s;
 }
 
-.form>*:nth-child(6) {
+.form-login>*:nth-child(6) {
   -webkit-animation-delay: 1.6s;
   animation-delay: 1.6s;
 }
 
-.form__image {
+.login-form__image {
   position: absolute;
   -webkit-animation: none;
   animation: none;
   opacity: 1;
-  filter: blur(16px);
+  filter: blur(100px);
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(rgba(0, 34, 255, 0.4) 10%, rgba(255, 255, 255, 0.9) 100%), url("https://res.cloudinary.com/dokf7npvg/image/upload/v1540355245/0jbUKoX.jpg");
+  background: linear-gradient(rgba(255, 255, 255, 0.9) 10%, rgba(0, 34, 255, 0.4) 100%), url("https://res.cloudinary.com/dokf7npvg/image/upload/v1540355245/0jbUKoX.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -156,14 +156,14 @@
   justify-self: center;
 }
 
-.input {
+.login-input {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-.input__element {
+.login-input__element {
   border: 0;
   margin: 0;
   width: 100%;
@@ -176,12 +176,12 @@
   font-size: 16px;
 }
 
-.input__element:focus {
+.login-input__element:focus {
   box-shadow: inset 0 -2px 0 0 #fdee06;
   outline: none;
 }
 
-.input__label {
+.login-input__label {
   font-size: 16px;
   position: absolute;
   left: 10px;
@@ -190,29 +190,29 @@
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input__element:not(:-moz-placeholder-shown)+.input__label {
+.login-input__element:not(:-moz-placeholder-shown)+.login-input__label {
   top: -16px;
   left: 0;
   font-size: 14px;
   transform: translate3d(0, -5px, 0);
 }
 
-.input__element:not(:-ms-input-placeholder)+.input__label {
+.login-input__element:not(:-ms-login-input-placeholder)+.login-input__label {
   top: -16px;
   left: 0;
   font-size: 14px;
   transform: translate3d(0, -5px, 0);
 }
 
-.input__element:focus+.input__label,
-.input__element:not(:placeholder-shown)+.input__label {
+.login-input__element:focus+.login-input__label,
+.login-input__element:not(:placeholder-shown)+.login-input__label {
   top: -16px;
   left: 0;
   font-size: 14px;
   transform: translate3d(0, -5px, 0);
 }
 
-.button {
+.login-button {
   background: #fdee06;
   border: 0;
   padding: 0;
@@ -229,11 +229,11 @@
   cursor: pointer;
 }
 
-.button:focus {
+.login-button:focus {
   outline: none;
 }
 
-.button:before {
+.login-button:before {
   content: "";
   position: absolute;
   top: 0;
@@ -246,14 +246,14 @@
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button:hover:before,
-.button:focus:before {
+.login-button:hover:before,
+.login-button:focus:before {
   transform-origin: left center;
   transform: scaleX(1);
 }
 
-.button:hover .button__icon,
-.button:focus .button__icon {
+.login-button:hover .button__icon,
+.login-button:focus .button__icon {
   transform: translate3d(10px, -50%, 0);
 }
 
@@ -291,4 +291,10 @@
   position: absolute;
   right: 0;
   top: 8px;
+}
+
+.register-h4 {
+  text-decoration: underline;
+  font-family: none;
+  cursor: pointer;
 }

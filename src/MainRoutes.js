@@ -12,7 +12,6 @@ import PostList from './pages/PostsList'
 const MainRoutes = () => {
 	return (
 		<>
-			<Navbar />
 			<Routes>
 				<Route path='/' element={<HomePage />} />
 				<Route path='*' element={<NotFoundPage />} />

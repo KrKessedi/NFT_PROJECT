@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 export const postsContext = createContext()
-export const usePosts = useContext(postsContext)
+export const usePosts = () => useContext(postsContext)
 
 let API_NFT = 'http://localhost:8000/nfts'
 
@@ -23,7 +23,7 @@ const reducer = (state = INIT_STATE, action) => {
 	}
 }
 
-export const PostContextProvider = ({ children }) => {
+const PostContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, INIT_STATE)
 
 	let navigate = useNavigate()
@@ -56,6 +56,8 @@ export const PostContextProvider = ({ children }) => {
 	}
 
 	return (
-		<postsContext.Provider values={values}>{children}</postsContext.Provider>
+		<postsContext.Provider value={values}>{children}</postsContext.Provider>
 	)
 }
+
+export default PostContextProvider

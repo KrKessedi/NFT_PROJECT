@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+@import url('http://fonts.cdnfonts.com/css/cyberpunk-is-not-dead');
 
 :root {
   --glitched-duration: 0.9s;
@@ -14,6 +15,7 @@
   --green-color: #446d44;
   --purple-color: purple;
   --neon-color: #39ff14;
+  --neon-aqua-color: rgb(0, 250, 255);
 }
 
 
@@ -33,27 +35,26 @@
   font-size: 30px;
   overflow: hidden;
   box-shadow: inset -50px 0 60px 10px rgb(225, 255, 2), inset 10px 0 60px 10px rgb(225, 255, 2);
-  font-family: 'Hacked';
+  /* font-family: 'Hacked'; */
+}
+
+.container>* {
+  font-family: 'Cyberpunk Is Not Dead', sans-serif;
 }
 
 .content {
   position: relative;
   /* width: 575px; */
-  width: calc(100% - 30px);
-  max-width: 50%;
+  /* width: calc(100% - 30px); */
+  max-width: 6 0%;
   margin: 20px;
   background-color: rgb(255, 255, 135, .3);
   padding: 30px 20px 17px 20px;
   text-align: center;
   box-shadow: inset 0px 0px 170px rgb(255, 255, 0);
-  /* animation: apparition 0.8s 1.2s cubic-bezier(0.39, 0.575, 0.28, 0.995) forwards; */
-  clip-path: polygon(0px 0px, 50px 0px, 75px 26px, 105px 26px, 130px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) calc(100% - 0px), 10px calc(100% - 0px), 0% calc(100% - 10px));
-  /* background-color: var(--red-color);   */
-  /* transition: var(--background-color) 0.3s,
-  left 0.3s; */
+  /* clip-path: polygon(0px 0px, 50px 0px, 75px 26px, 105px 26px, 130px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) calc(100% - 0px), 10px calc(100% - 0px), 0% calc(100% - 10px)); */
   border-radius: 2vw;
   border: 4px solid rgb(255, 255, 255);
-  /* clip-path: polygon(0 0, 8% 0, 12% 3%, 88% 3%, 92% 0, 100% 0, 100% 15%, 98% 28%, 98% 72%, 100% 85%, 100% 100%, 0 100%, 100%, 0); */
 }
 
 .block {
@@ -67,7 +68,7 @@
   margin-bottom: 0.6rem;
   letter-spacing: 0.1rem;
   color: #fff111;
-  font-family: 'Slackey', cursive;
+  /* font-family: 'Slackey', cursive; */
   box-shadow: 0 2px 0 black;
 }
 
@@ -928,7 +929,7 @@ h3.cyberpunk:before {
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 
 
 .container .btn {
@@ -941,11 +942,11 @@ h3.cyberpunk:before {
 }
 
 .container .btn:hover {
-  box-shadow: 0 0 40px rgb(255, 255, 0);
+  box-shadow: 0 0 40px rgb(221, 0, 255);
   transition: .6s;
 }
 
-.container .btn a {
+.container .btn .home-btn {
   position: absolute;
   top: 0;
   left: 0;
@@ -955,13 +956,13 @@ h3.cyberpunk:before {
   justify-content: center;
   align-items: center;
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px rgba(255, 255, 255, 0.7);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 30px;
   color: rgb(255, 255, 255);
   z-index: 1;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 300;
   letter-spacing: 1px;
   text-decoration: none;
@@ -971,14 +972,14 @@ h3.cyberpunk:before {
 
 }
 
-.container .btn:hover a {
+.container .btn:hover .home-btn {
   cursor: pointer;
   letter-spacing: 3px;
   transition: 2s;
   color: #000;
 }
 
-.container .btn a::before {
+.container .btn .home-btn::before {
   content: '';
   position: absolute;
   top: 0;
@@ -991,7 +992,7 @@ h3.cyberpunk:before {
   transition: 0.5s;
 }
 
-.container .btn:hover a::before {
+.container .btn:hover .home-btn::before {
   transform: skewX(45deg) translateX(200%);
 }
 
@@ -1047,4 +1048,126 @@ h3.cyberpunk:before {
     0 0 10px 2px rgb(0, 0, 0, .2),
     0 0 30px 2px rgb(0, 0, 0, .2);
   color: rgb(0, 0, 0);
+} */
+
+.home-btn {
+  position: relative;
+  display: inline-block;
+  padding: 1vw 2vw;
+  margin: 40px 0;
+  color: var(--neon-aqua-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  margin-right: 50px;
+
+}
+
+.home-btn:hover {
+  background: var(--neon-aqua-color);
+  color: #050801;
+  box-shadow: 0 0 5px var(--neon-aqua-color),
+    0 0 25px var(--neon-aqua-color),
+    0 0 50px var(--neon-aqua-color),
+    0 0 200px var(--neon-aqua-color);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* .home-btn:nth-child(1) {
+  filter: hue-rotate(270deg);
+}
+
+.home-btn:nth-child(2) {
+  filter: hue-rotate(110deg);
+} */
+
+.home-btn span {
+  position: absolute;
+  display: block;
+}
+
+.home-btn span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-aqua-color));
+  animation: animate1 .1s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.home-btn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--neon-aqua-color));
+  animation: animate2 .1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.home-btn span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--neon-aqua-color));
+  animation: animate3 .1s linear infinite;
+  animation-delay: 0.50s;
+}
+
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+
+.home-btn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--neon-aqua-color));
+  animation: animate4 .1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
 }
