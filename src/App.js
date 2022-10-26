@@ -1,12 +1,15 @@
 import React from 'react'
 import MainRoutes from './MainRoutes'
 import Navbar from './components/Navbar'
+import Cursor from './components/Cursor'
 
 const App = () => {
 	return (
-		<MainRoutes>
+		<>
+			<Cursor />
 			<Navbar />
-		</MainRoutes>
+			<MainRoutes />
+		</>
 	)
 }
 
