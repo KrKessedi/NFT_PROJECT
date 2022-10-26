@@ -4,11 +4,14 @@ import CreatePostPage from './pages/CreatePostPage'
 import HomePage from './pages/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
 import RegistrationPage from './pages/RegistrationPage'
-import Navbar from './components/Navbar'
 import LoginPage from './pages/LoginPage'
 import Basket from './components/posts/Basket'
 import PostList from './pages/PostsList'
+<<<<<<< HEAD
+import DrawNFTPage from './pages/DrawNFTPage'
+=======
 import PostDetails from './components/posts/PostDetails'
+>>>>>>> d0cf46f5eefc4f545555704d589bb945323eb20e
 
 const MainRoutes = () => {
 	return (
@@ -21,7 +24,11 @@ const MainRoutes = () => {
 				<Route path='/login' element={<LoginPage />} />
 				<Route path='/basket' element={<Basket />} />
 				<Route path='/list' element={<PostList />} />
+<<<<<<< HEAD
+				<Route path='/draw-nft' element={<DrawNFTPage />} />
+=======
 				<Route path='/details/:id' element={<PostDetails />} />
+>>>>>>> d0cf46f5eefc4f545555704d589bb945323eb20e
 			</Routes>
 		</>
 	)
