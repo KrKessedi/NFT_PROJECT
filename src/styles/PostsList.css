@@ -1,0 +1,11 @@
+.postsList {
+  margin-top: -6vw;
+  width: 98.9vw;
+  /* margin: 4vw; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: black;
+  padding-top: 10vw;
+  padding: 10vw 15vw;
+}

@@ -1,9 +1,11 @@
+@import url('http://fonts.cdnfonts.com/css/cyberpunk-is-not-dead');
+
 .registration-form {
-  background: #101010;
+  /* background: #ffffff; */
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(https://res.cloudinary.com/dokf7npvg/image/upload/v1540355245/0jbUKoX.jpg);
+  background: linear-gradient(180deg, black 15%, rgb(0, 128, 0, .4)), url(https://res.cloudinary.com/dokf7npvg/image/upload/v1540355245/0jbUKoX.jpg);
   background-position: center;
   background-size: cover;
   padding: 60px 30px;
@@ -12,6 +14,10 @@
   width: 100vw;
   overflow-y: auto;
   margin-top: -5.8vw;
+}
+
+.registration-form>* {
+  font-family: 'Cyberpunk Is Not Dead', sans-serif;
 }
 
 .registration-form:before {
@@ -139,7 +145,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(rgba(16, 16, 16, 0.8), rgba(16, 16, 16, 0.8)), url("https://res.cloudinary.com/dokf7npvg/image/upload/v1540355245/0jbUKoX.jpg");
+  background: linear-gradient(rgba(0, 34, 255, 0.4) 10%, rgba(255, 255, 255, 0.9) 100%), url("https://res.cloudinary.com/dokf7npvg/image/upload/v1540355245/0jbUKoX.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -237,7 +243,7 @@
   background: #22edfc;
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover:before,

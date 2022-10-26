@@ -10,6 +10,7 @@
   --green-color: #446d44;
   --purple-color: purple;
   --neon-color: #39ff14;
+  --black-color: #000
 }
 
 * {
@@ -21,14 +22,11 @@
   /* background: #000; */
 }
 
-body {
+/* body {
   margin: 0;
   padding: 0;
-  height: 100%;
   position: relative;
-  background: -gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  overflow: hidden;
-}
+} */
 
 .basket {
   color: white;
@@ -63,7 +61,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--orange-color);
+  background-color: var(--black-color);
 }
 
 ::-webkit-scrollbar-corner {
@@ -72,4 +70,9 @@ body {
 
 ::-webkit-resizer {
   display: none;
+}
+
+button:active {
+  box-shadow: none !important;
+  transition: .8s;
 }

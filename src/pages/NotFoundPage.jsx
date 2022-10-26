@@ -94,8 +94,13 @@ const HotFoundPage = () => {
 							Are you lost in the galaxy <strong>404.</strong>
 						</h3>
 						<div className='btn-container'>
-							<div className='btn'>
-								<a onClick={() => navigate('/')}>GO TO HOME PAGE</a>
+							<div className='home-btn'>
+								<a onClick={() => navigate('/')} className=''>
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>HOME
+								</a>
 							</div>
 						</div>
 					</div>

@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/RegistrationPage.css'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContextProvider'
 
 const RegistrationPage = () => {
+	const [username, setUsername] = useState('')
+	const [password, setPassword] = useState('')
+
+	const { registration } = useAuth()
+
+	function registerSystem() {
+		registration(username, password)
+	}
+
 	return (
 		<div className='registration-form'>
 			<form className='form' action='' method='get'>
@@ -31,12 +42,16 @@ const RegistrationPage = () => {
 				<div className='input'>
 					<input
 						id='name'
+						name='name'
 						type='text'
 						className='input__element'
 						placeholder=' '
 						autoComplete='off'
+						value={username}
+						onChange={e => setUsername(e.target.value)}
+						autoFocus='on'
 					/>
-					<label className='input__label' for='name'>
+					<label className='input__label' htmlFor='name'>
 						Your name
 					</label>
 				</div>
@@ -44,28 +59,21 @@ const RegistrationPage = () => {
 					<input
 						id='password'
 						type='password'
+						name='password'
 						className='input__element'
 						placeholder=' '
 						autoComplete='off'
+						value={password}
+						onChange={e => setPassword(e.target.value)}
 					/>
-					<label className='input__label' for='password'>
+					<label className='input__label' htmlFor='password'>
 						Password
 					</label>
 				</div>
-				<div className='input'>
-					<input
-						id='pasword-confirm'
-						type='password'
-						className='input__element'
-						placeholder=' '
-						autoComplete='off'
-					/>
-					<label className='input__label' for='password-confirm'>
-						Password Confirm
-					</label>
-				</div>
-				<button type='button' className='button'>
-					<div className='button__label'>Continue</div>
+				<button className='button' onClick={registerSystem}>
+					<div className='button__label' align='center'>
+						Register
+					</div>
 					<div className='button__icon'></div>
 				</button>
 			</form>

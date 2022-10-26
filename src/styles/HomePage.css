@@ -1,10 +1,19 @@
 .home {
+<<<<<<< HEAD
 	margin-top: -6vw;
 	z-index: -10;
 	position: relative;
 	background: #000;
 	width: 100vw;
 	height: 100.8vh;
+=======
+  margin-top: -6vw;
+  z-index: -10;
+  position: relative;
+  background: #000;
+  /* width: 100vw; */
+  height: 100.8vh;
+>>>>>>> d0cf46f5eefc4f545555704d589bb945323eb20e
 }
 
 .wrapper {
@@ -60,16 +69,26 @@
 }
 
 .wrapper h1.glitch1 {
+<<<<<<< HEAD
 	color: rgb(255, 255, 255);
 	font-family: sans-serif;
 	font-weight: 800;
 	position: relative;
 	font-size: 7vw;
 	padding: 30px;
+=======
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-weight: 800;
+  position: relative;
+  font-size: 7vw;
+  padding: 30px;
+>>>>>>> d0cf46f5eefc4f545555704d589bb945323eb20e
 }
 
 .wrapper h1.glitch1::before,
 .wrapper h1.glitch1::after {
+<<<<<<< HEAD
 	padding: 30px;
 	color: white;
 	content: 'Page';
@@ -101,6 +120,39 @@
 	animation-delay: 0s;
 	animation-iteration-count: infinite;
 	animation-direction: reverse-alternate;
+=======
+  padding: 30px;
+  color: white;
+  content: "Page";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+  top: 0;
+}
+
+.wrapper h1.glitch1::before {
+  left: 3px;
+  text-shadow: -2px 0 red;
+  animation-name: glitch-animation-1;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: reverse-alternate;
+}
+
+.wrapper h1.glitch1::after {
+  left: -3px;
+  text-shadow: -2px 0 blue;
+  animation-name: glitch-animation-2;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: reverse-alternate;
+>>>>>>> d0cf46f5eefc4f545555704d589bb945323eb20e
 }
 
 @keyframes glitch-animation-1 {
