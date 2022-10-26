@@ -294,7 +294,12 @@
 }
 
 .register-h4 {
+  display: inline-block;
   text-decoration: underline;
   font-family: none;
   cursor: pointer;
+}
+
+.register-h4:hover {
+  color: yellow;
 }

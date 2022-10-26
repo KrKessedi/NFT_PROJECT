@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import LoginPage from './pages/LoginPage'
 import Basket from './components/posts/Basket'
 import PostList from './pages/PostsList'
+import PostDetails from './components/posts/PostDetails'
 
 const MainRoutes = () => {
 	return (
@@ -20,6 +21,7 @@ const MainRoutes = () => {
 				<Route path='/login' element={<LoginPage />} />
 				<Route path='/basket' element={<Basket />} />
 				<Route path='/list' element={<PostList />} />
+				<Route path='/details/:id' element={<PostDetails />} />
 			</Routes>
 		</>
 	)

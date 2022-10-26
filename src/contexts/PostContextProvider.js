@@ -45,11 +45,28 @@ const PostContextProvider = ({ children }) => {
 		})
 	}
 
+	async function getOnePost(id) {
+		const { data } = await axios(`${API_NFT}/${id}`)
+
+		dispatch({
+			type: 'GET_ONE_POST',
+			payload: data,
+		})
+	}
+
+	async function deletePost(id) {
+		await axios.delete(`${API_NFT}/${id}`)
+
+		getPosts()
+	}
+
 	// values
 
 	const values = {
 		addPost,
 		getPosts,
+		getOnePost,
+		deletePost,
 
 		posts: state.posts,
 		onePost: state.onePost,

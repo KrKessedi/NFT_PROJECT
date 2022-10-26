@@ -163,7 +163,7 @@ function ResponsiveAppBar() {
 						<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 							<Button
 								className='testing'
-								onClick={() => navigate('/')}
+								onClick={() => navigate('/list')}
 								sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
 							>
 								List

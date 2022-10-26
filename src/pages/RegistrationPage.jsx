@@ -70,7 +70,7 @@ const RegistrationPage = () => {
 						Password
 					</label>
 				</div>
-				<button type='button' className='button' onClick={registerSystem}>
+				<button className='button' onClick={registerSystem}>
 					<div className='button__label' align='center'>
 						Register
 					</div>
