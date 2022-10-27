@@ -193,7 +193,9 @@
 }
 
 .post-detail {
-  background: #000;
+  background-image: radial-gradient(ellipse at 33% 10%,
+      #191a1e 30%,
+      #881e1e 99%);
   margin-top: -6vw;
   height: 100.4vh;
   padding-top: 7vw;

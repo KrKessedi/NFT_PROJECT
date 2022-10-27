@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { usePosts } from '../contexts/PostContextProvider'
 import PostCard from '../components/posts/PostCard'
+import Pagination from '@mui/material/Pagination'
 import '../styles/PostsList.css'
 
 const PostsList = () => {
@@ -19,6 +20,9 @@ const PostsList = () => {
 			) : (
 				<h3>Loading...</h3>
 			)}
+			<center>
+				<Pagination count={10} variant='outlined' color='primary' />
+			</center>
 		</div>
 	)
 }

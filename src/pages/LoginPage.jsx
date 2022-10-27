@@ -13,6 +13,7 @@ const LoginPage = () => {
 
 	function loginSystem() {
 		login(username, password)
+		navigate('/list')
 	}
 
 	return (

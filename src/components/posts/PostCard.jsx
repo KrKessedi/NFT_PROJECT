@@ -13,9 +13,16 @@ import InfoIcon from '@mui/icons-material/Info'
 import '../../styles/PostCard.css'
 import BookmarkRoundedIcon from '@mui/icons-material/BookmarkRounded'
 import BookmarkAddedRoundedIcon from '@mui/icons-material/BookmarkAddedRounded'
+import { usePosts } from '../../contexts/PostContextProvider'
+import { useBasket } from '../../contexts/BasketContextProvider'
+import { useFav } from '../../contexts/FavoriteContext'
 
 const PostCard = ({ item }) => {
 	const [favorite, setFavorite] = useState(false)
+
+	const { deletePost } = usePosts()
+	const { addPostToBasket } = useBasket()
+	const { addPostToFavorite, deletePostInFavorite } = useFav()
 
 	const navigate = useNavigate()
 
@@ -23,7 +30,7 @@ const PostCard = ({ item }) => {
 		<div className='card'>
 			<Card style={{ boxShadow: 'none', background: 'white' }}>
 				<CardMedia
-					style={{ borderRadius: '1vw' }}
+					style={{ borderRadius: '1vw', background: '#000' }}
 					component='img'
 					alt={item.image}
 					// height='140'
@@ -32,6 +39,10 @@ const PostCard = ({ item }) => {
 				<CardContent>
 					<Typography gutterBottom variant='h4' component='div'>
 						Author: {item.author}
+					</Typography>
+					<br />
+					<Typography gutterBottom variant='h4' component='div'>
+						Title: {item.title}
 					</Typography>
 					<br />
 					<Typography variant='body1' color='text.dark'>
@@ -48,16 +59,21 @@ const PostCard = ({ item }) => {
 						<BookmarkAddedRoundedIcon
 							fontSize='large'
 							className='addToFavorite'
+							onClick={() => deletePostInFavorite(item.id)}
 						/>
 					) : (
-						<BookmarkRoundedIcon fontSize='large' className='addToFavorite' />
+						<BookmarkRoundedIcon
+							fontSize='large'
+							onClick={() => addPostToFavorite(item)}
+							className='addToFavorite'
+						/>
 					)}
 				</h2>
 
 				<CardActions className='btn-block'>
 					<Button
 						style={{ boxShadow: ' 0 4px 5px black' }}
-						// onClick={() => navigate(`/edit/${item.id}`)}
+						onClick={() => navigate(`/edit/${item.id}`)}
 						variant='contained'
 						color='warning'
 						size='small'
@@ -77,7 +93,7 @@ const PostCard = ({ item }) => {
 					</Button>
 					<Button
 						style={{ boxShadow: ' 0 4px 5px black' }}
-						// onClick={() => deleteProduct(item.id)}
+						onClick={() => deletePost(item.id)}
 						size='small'
 						variant='contained'
 						color='error'
@@ -87,7 +103,7 @@ const PostCard = ({ item }) => {
 					</Button>
 					<Button
 						style={{ boxShadow: ' 0 4px 5px black' }}
-						// onClick={() => addProductToCart(item)}
+						onClick={() => addPostToBasket(item)}
 						size='small'
 						variant='contained'
 						color='success'

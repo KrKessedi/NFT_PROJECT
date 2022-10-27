@@ -5,7 +5,9 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  background-color: black;
+  background-image: radial-gradient(ellipse at 33% 10%,
+      #881e1e 0%,
+      #191a1e 75%);
   padding-top: 10vw;
   padding: 10vw 15vw;
 }
