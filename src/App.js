@@ -5,6 +5,7 @@ import AuthContextProvider from './contexts/AuthContextProvider'
 import PostContextProvider from './contexts/PostContextProvider'
 import BasketContextProvider from './contexts/BasketContextProvider'
 import FavoriteContextProvider from './contexts/FavoriteContext'
+import Cursor from './components/Cursor'
 
 const App = () => {
 	return (
@@ -12,6 +13,7 @@ const App = () => {
 			<BasketContextProvider>
 				<AuthContextProvider>
 					<PostContextProvider>
+						<Cursor />
 						<Navbar />
 						<MainRoutes />
 					</PostContextProvider>

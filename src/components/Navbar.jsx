@@ -62,8 +62,6 @@ function ResponsiveAppBar() {
 		setAnchorElUser(null)
 	}
 
-	console.log(user)
-
 	return (
 		<>
 			<div className='subNavbar'></div>

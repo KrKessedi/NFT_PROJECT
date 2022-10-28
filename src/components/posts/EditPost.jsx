@@ -10,8 +10,6 @@ const EditPost = () => {
 	const navigate = useNavigate()
 	const { id } = useParams()
 
-	console.log(post)
-
 	useEffect(() => {
 		getOnePost(id)
 	}, [])
@@ -23,7 +21,6 @@ const EditPost = () => {
 	}, [onePost])
 
 	function handleEdit(e) {
-		console.log(e.target.name)
 		let obj = {
 			...post,
 			[e.target.name]: e.target.value,
@@ -48,59 +45,30 @@ const EditPost = () => {
 												<div className='row'>
 													<div className='col col__left label'>Picture</div>
 													<div className='col col__center'>
-														{/* <input
-                        autoComplete='off' type='text' id='login' maxlength='32' readonly /> */}
 														<input
 															autoComplete='off'
 															className='rows'
 															type='text'
-															// style='text-align:center ;'
-															id='login'
-															// name='password'
+															id='image'
 															name='image'
 															placeholder=''
 															data-error=''
-															// maxlength='32'
-															// autoFocus='true'
 															value={post.image}
 															onChange={handleEdit}
 														/>
 													</div>
 												</div>
-												{/* <div className='row'>
-											<div className='col col__left label'>Author</div>
-											<div className='col col__center'>
-												<input
-													autoComplete='off'
-													className='rows'
-													type='text'
-													id='login'
-													name='author'
-													placeholder=''
-													data-error=''
-													// maxlength='32'
-													// autoFocus='true'
-													value={post.author}
-													onChange={handleEdit}
-												/>
-											</div>
-										</div> */}
 												<div className='row'>
-													<div className='col col__left label'>Name</div>
+													<div className='col col__left label'>Title</div>
 													<div className='col col__center'>
-														{/* <input
-                        autoComplete='off' type='text' id='login' maxlength='32' readonly /> */}
 														<input
 															autoComplete='off'
 															className='rows'
 															type='text'
-															// style='text-align:center ;'
-															id='login'
-															name='name'
+															id='title'
+															name='title'
 															placeholder=''
 															data-error=''
-															// maxlength='32'
-															// autoFocus='true'
 															value={post.title}
 															onChange={handleEdit}
 														/>
@@ -109,19 +77,14 @@ const EditPost = () => {
 												<div className='row'>
 													<div className='col col__left label'>Description</div>
 													<div className='col col__center'>
-														{/* <input
-                        autoComplete='off' type='text' id='login' maxlength='32' readonly /> */}
 														<input
 															autoComplete='off'
 															className='rows'
 															type='text'
-															// style='text-align:center ;'
-															id='login'
+															id='desc'
 															name='description'
 															placeholder=''
 															data-error=''
-															// maxlength='32'
-															// autoFocus='true'
 															value={post.description}
 															onChange={handleEdit}
 														/>
@@ -130,19 +93,14 @@ const EditPost = () => {
 												<div className='row'>
 													<div className='col col__left label'>Category</div>
 													<div className='col col__center'>
-														{/* <input
-                        autoComplete='off' type='text' id='login' maxlength='32' readonly /> */}
 														<input
 															autoComplete='off'
 															className='rows'
 															type='text'
-															// style='text-align:center ;'
-															id='login'
+															id='category'
 															name='category'
 															placeholder=''
 															data-error=''
-															// maxlength='32'
-															// autoFocus='true'
 															value={post.category}
 															onChange={handleEdit}
 														/>
@@ -155,14 +113,11 @@ const EditPost = () => {
 															<input
 																autoComplete='off'
 																className='rows'
-																// style='text-align:center;   '
 																type='text'
-																id='password'
+																id='price'
 																name='price'
 																placeholder=''
 																data-error=''
-																// maxlength='32'
-																// autoFocus='true'
 																value={post.price}
 																onChange={handleEdit}
 															/>
@@ -175,9 +130,7 @@ const EditPost = () => {
 															className='rows save-btn'
 															type='submit'
 															id='submit'
-															// name='submit'
 															style={{
-																// marginRight: '-9.8vw',
 																marginLeft: '-9.8vw',
 															}}
 														>

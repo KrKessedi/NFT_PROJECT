@@ -135,9 +135,11 @@
   display: inline-block
 }
 
-#email,
-#login,
-#password {
+#title,
+#category,
+#desc,
+#image,
+#price {
   border: 2px solid #d7001e;
   margin: 10px 0;
   padding: 10px;
