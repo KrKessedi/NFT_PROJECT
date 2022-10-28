@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, useContext } from 'react'
 import '../styles/DrawNFT.css'
 import GlitchSquiggly from 'react-glitch-effect/core/GlitchClip'
 import GlitchText from 'react-glitch-effect/core/GlitchText'
@@ -6,11 +6,17 @@ import ModeEditOutlineRoundedIcon from '@mui/icons-material/ModeEditOutlineRound
 import RotateLeftIcon from '@mui/icons-material/RotateLeft'
 import RotateRightIcon from '@mui/icons-material/RotateRight'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
+import CreatePost from './posts/CreatePost'
+import { useNavigate } from 'react-router-dom'
+import { postsContext } from '../contexts/PostContextProvider'
 
 const DrawNFT = () => {
+	const { addImage } = useContext(postsContext)
+	const navigate = useNavigate()
 	const canvasRef = useRef(null)
 	const contextRef = useRef(null)
-
+	// const [image, setImageUrl] = useState(imageUrl)
+	// console.log(imageUrl, 'drafNFT')
 	const [isDrawing, setIsDrawing] = useState(false)
 
 	const [color, setColor] = useState('white')
@@ -58,10 +64,14 @@ const DrawNFT = () => {
 		setIsDrawing(false)
 	}
 
-	const saveImageToLocal = (e) => {
-		let link = e.currentTarget
+	const saveImageToLocal = () => {
+		// let link = e.currentTarget
 		// link.setAttribute('download', 'canvas.png')
+
 		let image = canvasRef.current.toDataURL('image/png')
+		// setImageUrl(image)
+		addImage(image)
+		console.log(image, 'df')
 		// link.setAttribute('href', image)
 	}
 
@@ -181,8 +191,10 @@ const DrawNFT = () => {
 							</div>
 							<a
 								id='download_image_link'
-								href='download_link'
-								onClick={saveImageToLocal}
+								onClick={() => {
+									navigate('/add')
+									saveImageToLocal()
+								}}
 							>
 								Download
 							</a>
