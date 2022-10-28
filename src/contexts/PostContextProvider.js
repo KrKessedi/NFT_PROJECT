@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 export const postsContext = createContext()
 export const usePosts = () => useContext(postsContext)
@@ -27,6 +27,7 @@ const PostContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, INIT_STATE)
 
 	let navigate = useNavigate()
+	const location = useLocation()
 
 	// add Post
 
@@ -65,6 +66,20 @@ const PostContextProvider = ({ children }) => {
 		getPosts()
 	}
 
+	const fetchByParams = (query, value) => {
+		const search = new URLSearchParams(location.search)
+
+		if (value === 'all') {
+			search.delete(query)
+		} else {
+			search.set(query, value)
+		}
+
+		const url = `${location.pathname}?${search.toString()}`
+
+		navigate(url)
+	}
+
 	// values
 
 	const values = {
@@ -73,6 +88,7 @@ const PostContextProvider = ({ children }) => {
 		getOnePost,
 		deletePost,
 		saveChanges,
+		fetchByParams,
 
 		posts: state.posts,
 		onePost: state.onePost,

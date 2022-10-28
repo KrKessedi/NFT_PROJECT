@@ -1,12 +1,13 @@
 .favorites {
   background: linear-gradient(110deg, #214, #000, #123, #000, #321);
   /* width: 80vw; */
-  /* height: 100vh; */
+  height: 1780px;
   padding-top: 10vw;
   margin-top: -5.8vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding-bottom: 10vw;
 }
 
 .relativeCard {

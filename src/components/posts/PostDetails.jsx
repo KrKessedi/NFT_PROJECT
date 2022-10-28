@@ -79,17 +79,16 @@ const PostDetails = () => {
 								</Typography>
 							</CardContent>
 						</Box>
-						<Button
-							className='addToBasket'
-							style={{ boxShadow: ' 0 4px 5px black' }}
-							onClick={() => addPostToBasket(onePost)}
-							// size='large'
-							variant='contained'
-							color='success'
-							endIcon={<AddShoppingCartIcon />}
-						>
-							Add to basket
-						</Button>
+						<div className='btn btn--primary'>
+							<button
+								onClick={() => addPostToBasket(onePost)}
+								className='btn__container'
+							>
+								Add to basket
+							</button>
+							<div className='btn__bottom'></div>
+							<div className='btn__noise'></div>
+						</div>
 						<CardMedia
 							style={{
 								borderRadius: '1vw',

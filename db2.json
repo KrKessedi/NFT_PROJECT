@@ -7,8 +7,7 @@
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
 			"category": "white",
-			"title": "people1",
-			"name": "people1"
+			"title": "people1"
 		},
 		{
 			"image": "https://gateway.pinata.cloud/ipfs/Qmb86L8mUphwJGzLPwXNTRiK1S4scBdj9cc2Sev3s8uLiB/2.png",
@@ -16,7 +15,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "black",
+			"category": "norm",
 			"title": "people"
 		},
 		{
@@ -25,7 +24,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "black",
+			"category": "chel",
 			"title": "people"
 		},
 		{
@@ -34,7 +33,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "white",
+			"category": "dodik",
 			"title": "people"
 		},
 		{
@@ -43,7 +42,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "white",
+			"category": "krasava",
 			"title": "people"
 		},
 		{
@@ -52,7 +51,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "white",
+			"category": "people",
 			"title": "people"
 		},
 		{
@@ -61,7 +60,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "black",
+			"category": "people",
 			"title": "people"
 		},
 		{
@@ -70,7 +69,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "white",
+			"category": "people",
 			"title": "people"
 		},
 		{
@@ -79,7 +78,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "white",
+			"category": "tip",
 			"title": "people"
 		},
 		{
@@ -88,7 +87,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "black",
+			"category": "people",
 			"title": "people"
 		},
 		{
@@ -97,7 +96,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "white",
+			"category": "loh",
 			"title": "people"
 		},
 		{
@@ -106,8 +105,8 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "white",
-			"title": "people"
+			"category": "ananas",
+			"title": "dodik"
 		},
 		{
 			"image": "https://gateway.pinata.cloud/ipfs/Qmb86L8mUphwJGzLPwXNTRiK1S4scBdj9cc2Sev3s8uLiB/13.png",
@@ -115,7 +114,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "black",
+			"category": "people",
 			"title": "people"
 		},
 		{
@@ -124,7 +123,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "black",
+			"category": "tomato",
 			"title": "people"
 		},
 		{
@@ -133,7 +132,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "black",
+			"category": "krot",
 			"title": "people"
 		},
 		{
@@ -142,7 +141,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "white",
+			"category": "people",
 			"title": "people"
 		},
 		{
@@ -151,7 +150,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "black",
+			"category": "besit",
 			"title": "people"
 		},
 		{
@@ -160,7 +159,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "black",
+			"category": "chitatel",
 			"title": "people"
 		},
 		{
@@ -169,7 +168,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "black",
+			"category": "kinoman",
 			"title": "people"
 		},
 		{
@@ -178,7 +177,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "white",
+			"category": "urod",
 			"title": "people"
 		},
 		{
@@ -187,7 +186,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "white",
+			"category": "hernya",
 			"title": "people"
 		},
 		{
@@ -196,7 +195,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "white",
+			"category": "shkolnik",
 			"title": "people"
 		},
 		{
@@ -214,7 +213,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "black",
+			"category": "white",
 			"title": "people"
 		},
 		{
@@ -223,7 +222,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "black",
+			"category": "krasava",
 			"title": "people"
 		},
 		{
@@ -232,16 +231,7 @@
 			"author": "Johny",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
 			"price": 50,
-			"category": "black",
-			"title": "people"
-		},
-		{
-			"image": "https://gateway.pinata.cloud/ipfs/Qmb86L8mUphwJGzLPwXNTRiK1S4scBdj9cc2Sev3s8uLiB/98.png",
-			"id": 26,
-			"author": "Johny",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis animi, neque iusto porro fuga maxime saepe accusantium.",
-			"price": 50,
-			"category": "white",
+			"category": "krasava",
 			"title": "people"
 		}
 	]
