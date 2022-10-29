@@ -6,7 +6,7 @@
 	top: 0;
 	left: 0;
 	pointer-events: none;
-	z-index: 10100
+	z-index: 10100;
 }
 
 * {
@@ -678,9 +678,7 @@
 	}
 }
 
-
 @-webkit-keyframes shift {
-
 	0%,
 	40%,
 	44%,
@@ -746,9 +744,7 @@
 	}
 }
 
-
 @keyframes shift {
-
 	0%,
 	40%,
 	44%,

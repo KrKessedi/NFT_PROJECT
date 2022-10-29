@@ -16,7 +16,9 @@ import BookmarkAddedRoundedIcon from '@mui/icons-material/BookmarkAddedRounded'
 import { usePosts } from '../../contexts/PostContextProvider'
 import { useBasket } from '../../contexts/BasketContextProvider'
 import { useFav } from '../../contexts/FavoriteContext'
+import Like from './Like'
 
+import CommentsModal from '../posts/PostComments'
 const PostCard = ({ item }) => {
 	const [favorite, setFavorite] = useState(false)
 
@@ -37,24 +39,16 @@ const PostCard = ({ item }) => {
 					image={item.image}
 				/>
 				<CardContent>
-					<Typography
-						className='post-title'
-						gutterBottom
-						// variant='h4'
-						fontSize={'2vw'}
-						component='div'
-					>
+					<Typography gutterBottom variant='h4' component='div'>
 						Author: {item.author}
 					</Typography>
 					<br />
-					<Typography
-						className='post-desc'
-						gutterBottom
-						// variant='h4'
-						fontSize={'2vw'}
-						component='div'
-					>
+					<Typography gutterBottom variant='h4' component='div'>
 						Title: {item.title}
+					</Typography>
+					<br />
+					<Typography variant='body1' color='text.dark'>
+						{item.category}
 					</Typography>
 					<br />
 					<Typography variant='body2' color='text.success'>
@@ -77,14 +71,11 @@ const PostCard = ({ item }) => {
 						/>
 					)}
 				</h2>
-
-				<div className='btn-block'>
+				<CommentsModal item={item} />
+				<Like />
+				<CardActions className='btn-block'>
 					<Button
-						className='cardBtn'
-						style={{
-							boxShadow: ' 0 4px 5px black',
-							margin: '1vw',
-						}}
+						style={{ boxShadow: ' 0 4px 5px black' }}
 						onClick={() => navigate(`/edit/${item.id}`)}
 						variant='contained'
 						color='warning'
@@ -95,11 +86,7 @@ const PostCard = ({ item }) => {
 					</Button>
 
 					<Button
-						className='cardBtn'
-						style={{
-							boxShadow: ' 0 4px 5px black',
-							margin: '1vw',
-						}}
+						style={{ boxShadow: ' 0 4px 5px black' }}
 						onClick={() => navigate(`/details/${item.id}`)}
 						variant='contained'
 						size='small'
@@ -108,11 +95,7 @@ const PostCard = ({ item }) => {
 						<InfoIcon />
 					</Button>
 					<Button
-						className='cardBtn'
-						style={{
-							boxShadow: ' 0 4px 5px black',
-							margin: '1vw',
-						}}
+						style={{ boxShadow: ' 0 4px 5px black' }}
 						onClick={() => deletePost(item.id)}
 						size='small'
 						variant='contained'
@@ -122,11 +105,7 @@ const PostCard = ({ item }) => {
 						<DeleteIcon />
 					</Button>
 					<Button
-						className='cardBtn'
-						style={{
-							boxShadow: ' 0 4px 5px black',
-							margin: '1vw',
-						}}
+						style={{ boxShadow: ' 0 4px 5px black' }}
 						onClick={() => addPostToBasket(item)}
 						size='small'
 						variant='contained'
@@ -135,7 +114,7 @@ const PostCard = ({ item }) => {
 					>
 						<AddShoppingCartIcon />
 					</Button>
-				</div>
+				</CardActions>
 			</Card>
 		</div>
 	)

@@ -10,6 +10,7 @@ let API_NFT = 'http://localhost:8000/nfts'
 const INIT_STATE = {
 	posts: [],
 	onePost: null,
+	imageUrl: '',
 }
 
 const reducer = (state = INIT_STATE, action) => {
@@ -18,6 +19,8 @@ const reducer = (state = INIT_STATE, action) => {
 			return { ...state, posts: action.payload }
 		case 'GET_ONE_POST':
 			return { ...state, onePost: action.payload }
+		case 'GET_IMAGE_URL':
+			return { ...state, imageUrl: action.payload }
 		default:
 			return state
 	}
@@ -35,6 +38,14 @@ const PostContextProvider = ({ children }) => {
 		await axios.post(API_NFT, newPost)
 
 		getPosts()
+	}
+
+	function addImage(newImg) {
+		dispatch({
+			type: 'GET_IMAGE_URL',
+			payload: newImg,
+		})
+		console.log(newImg, 'immmm')
 	}
 
 	async function getPosts() {
@@ -87,9 +98,11 @@ const PostContextProvider = ({ children }) => {
 		getPosts,
 		getOnePost,
 		deletePost,
+		addImage,
 		saveChanges,
 		fetchByParams,
 
+		imageUrl: state.imageUrl,
 		posts: state.posts,
 		onePost: state.onePost,
 	}

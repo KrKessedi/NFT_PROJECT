@@ -1,329 +1,342 @@
 .preloader {
-  display: flex;
+	display: flex;
 }
 
-
 .preloader {
-  animation: tiltSpin 8s linear infinite;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  width: 17em;
-  height: 17em;
+	animation: tiltSpin 8s linear infinite;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	width: 17em;
+	height: 17em;
 }
 
 .preloader,
 .preloader__ring {
-  transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
 
 .preloader__ring {
-  animation-name: spin;
-  animation-duration: 4s;
-  animation-timing-function: inherit;
-  animation-iteration-count: inherit;
-  font-size: 2em;
-  position: relative;
-  height: 3rem;
-  width: 1.5rem;
+	animation-name: spin;
+	animation-duration: 4s;
+	animation-timing-function: inherit;
+	animation-iteration-count: inherit;
+	font-size: 2em;
+	position: relative;
+	height: 3rem;
+	width: 1.5rem;
 }
 
 .preloader__ring:nth-child(even) {
-  animation-direction: reverse;
+	animation-direction: reverse;
 }
 
 .preloader__sector {
-  font-weight: 600;
-  position: absolute;
-  top: 0;
-  left: 0;
-  text-align: center;
-  text-transform: uppercase;
-  transform: translateZ(7rem);
+	font-weight: 600;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	text-transform: uppercase;
+	transform: translateZ(7rem);
 }
 
 .preloader__sector,
 .preloader__sector:empty:before {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
 }
 
 .preloader__sector:empty:before {
-  background: linear-gradient(transparent 45%, currentColor 45% 55%, transparent 55%);
-  content: "";
+	background: linear-gradient(
+		transparent 45%,
+		currentColor 45% 55%,
+		transparent 55%
+	);
+	content: '';
 }
 
 .preloader__sector:nth-child(2) {
-  transform: rotateY(12deg) translateZ(7rem);
+	transform: rotateY(12deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(3) {
-  transform: rotateY(24deg) translateZ(7rem);
+	transform: rotateY(24deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(4) {
-  transform: rotateY(36deg) translateZ(7rem);
+	transform: rotateY(36deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(5) {
-  transform: rotateY(48deg) translateZ(7rem);
+	transform: rotateY(48deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(6) {
-  transform: rotateY(60deg) translateZ(7rem);
+	transform: rotateY(60deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(7) {
-  transform: rotateY(72deg) translateZ(7rem);
+	transform: rotateY(72deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(8) {
-  transform: rotateY(84deg) translateZ(7rem);
+	transform: rotateY(84deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(9) {
-  transform: rotateY(96deg) translateZ(7rem);
+	transform: rotateY(96deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(10) {
-  transform: rotateY(108deg) translateZ(7rem);
+	transform: rotateY(108deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(11) {
-  transform: rotateY(120deg) translateZ(7rem);
+	transform: rotateY(120deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(12) {
-  transform: rotateY(132deg) translateZ(7rem);
+	transform: rotateY(132deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(13) {
-  transform: rotateY(144deg) translateZ(7rem);
+	transform: rotateY(144deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(14) {
-  transform: rotateY(156deg) translateZ(7rem);
+	transform: rotateY(156deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(15) {
-  transform: rotateY(168deg) translateZ(7rem);
+	transform: rotateY(168deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(16) {
-  transform: rotateY(180deg) translateZ(7rem);
+	transform: rotateY(180deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(17) {
-  transform: rotateY(192deg) translateZ(7rem);
+	transform: rotateY(192deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(18) {
-  transform: rotateY(204deg) translateZ(7rem);
+	transform: rotateY(204deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(19) {
-  transform: rotateY(216deg) translateZ(7rem);
+	transform: rotateY(216deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(20) {
-  transform: rotateY(228deg) translateZ(7rem);
+	transform: rotateY(228deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(21) {
-  transform: rotateY(240deg) translateZ(7rem);
+	transform: rotateY(240deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(22) {
-  transform: rotateY(252deg) translateZ(7rem);
+	transform: rotateY(252deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(23) {
-  transform: rotateY(264deg) translateZ(7rem);
+	transform: rotateY(264deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(24) {
-  transform: rotateY(276deg) translateZ(7rem);
+	transform: rotateY(276deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(25) {
-  transform: rotateY(288deg) translateZ(7rem);
+	transform: rotateY(288deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(26) {
-  transform: rotateY(300deg) translateZ(7rem);
+	transform: rotateY(300deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(27) {
-  transform: rotateY(312deg) translateZ(7rem);
+	transform: rotateY(312deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(28) {
-  transform: rotateY(324deg) translateZ(7rem);
+	transform: rotateY(324deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(29) {
-  transform: rotateY(336deg) translateZ(7rem);
+	transform: rotateY(336deg) translateZ(7rem);
 }
 
 .preloader__sector:nth-child(30) {
-  transform: rotateY(348deg) translateZ(7rem);
+	transform: rotateY(348deg) translateZ(7rem);
 }
 
 /* Animations */
 @keyframes tiltSpin {
-  from {
-    transform: rotateY(0) rotateX(30deg);
-  }
+	from {
+		transform: rotateY(0) rotateX(30deg);
+	}
 
-  to {
-    transform: rotateY(1turn) rotateX(30deg);
-  }
+	to {
+		transform: rotateY(1turn) rotateX(30deg);
+	}
 }
 
 @keyframes spin {
-  from {
-    transform: rotateY(0);
-  }
+	from {
+		transform: rotateY(0);
+	}
 
-  to {
-    transform: rotateY(1turn);
-  }
+	to {
+		transform: rotateY(1turn);
+	}
 }
 
 .post-detail {
-  background-image: radial-gradient(ellipse at 33% 10%,
-      #191a1e 30%,
-      #881e1e 99%);
-  margin-top: -6vw;
-  height: 100.4vh;
-  padding-top: 7vw;
+	background-image: radial-gradient(
+		ellipse at 33% 10%,
+		#191a1e 30%,
+		#881e1e 99%
+	);
+	margin-top: -6vw;
+	height: 100.4vh;
+	padding-top: 7vw;
 }
 
 .addToBasket {
-  position: absolute;
-  height: 2.5vw;
-  width: 100px;
-  top: 34vw;
-  /* left: -19vw; */
+	position: absolute;
+	height: 2.5vw;
+	width: 100px;
+	top: 34vw;
+	/* left: -19vw; */
 }
 
 .btn {
-  display: inline-block;
-  position: relative;
-  height: 50px;
-  margin-top: 30vw;
-  left: -20vw;
-  cursor: pointer;
+	display: inline-block;
+	position: relative;
+	height: 50px;
+	margin-top: 30vw;
+	left: -20vw;
+	cursor: pointer;
 }
 
 .btn__noise {
-  position: absolute;
-  top: -28%;
-  height: 66px;
-  width: 100%;
-  pointer-events: none;
+	position: absolute;
+	top: -28%;
+	height: 66px;
+	width: 100%;
+	pointer-events: none;
 }
 
 .btn--primary .btn__container {
-
-  width: 8vw;
-  background: #6b6ee2;
-  border-color: #5054c6;
-  display: flex;
-  align-items: center;
-  line-height: 10px;
-  pointer-events: none;
-  color: #000000;
+	width: 8vw;
+	background: #6b6ee2;
+	border-color: #5054c6;
+	display: flex;
+	align-items: center;
+	line-height: 10px;
+	pointer-events: none;
+	color: #000000;
 }
 
 .btn--primary .noise__el {
-  fill: #5054c6;
+	fill: #5054c6;
 }
 
 .btn--primary:hover .btn__container {
-  background: #34389f;
-  border-color: #494dc3;
+	background: #34389f;
+	border-color: #494dc3;
 }
 
 .btn--primary:hover .btn__bottom {
-  background: #34389f;
-  border-color: #494dc3;
+	background: #34389f;
+	border-color: #494dc3;
 }
 
 .btn--primary:active .btn__container {
-  background: #2e318c;
-  border-color: #3b3fb3;
-  color: #c3c5ec;
+	background: #2e318c;
+	border-color: #3b3fb3;
+	color: #c3c5ec;
 }
 
 .btn--primary:active .btn__bottom {
-  background: #2e318c;
-  border-color: #3b3fb3;
+	background: #2e318c;
+	border-color: #3b3fb3;
 }
 
 .btn:before,
 .btn:after {
-  content: "";
-  height: 2px;
-  /* width: 11px; */
-  background: #5054c6;
-  display: block;
-  position: absolute;
-  z-index: 1;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  border-radius: 2px;
-  border-radius: 2px;
+	content: '';
+	height: 2px;
+	/* width: 11px; */
+	background: #5054c6;
+	display: block;
+	position: absolute;
+	z-index: 1;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	border-radius: 2px;
+	border-radius: 2px;
 }
 
 .btn:before {
-  right: -1.07px;
-  top: 4px;
+	right: -1.07px;
+	top: 4px;
 }
 
 .btn:after {
-  left: -1.07px;
-  bottom: 6px;
+	left: -1.07px;
+	bottom: 6px;
 }
 
 .btn__bottom {
-  position: absolute;
-  content: "";
-  display: block;
-  height: 4px;
-  width: 50%;
-  background: #383CAB;
-  pointer-events: none;
-  right: 0px;
-  bottom: 0px;
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, calc(0% + 4px) 100%);
-  border-bottom: 2px solid #5054c6;
-  border-right: 2px solid #5054c6;
+	position: absolute;
+	content: '';
+	display: block;
+	height: 4px;
+	width: 50%;
+	background: #383cab;
+	pointer-events: none;
+	right: 0px;
+	bottom: 0px;
+	clip-path: polygon(0 0, 100% 0%, 100% 100%, calc(0% + 4px) 100%);
+	border-bottom: 2px solid #5054c6;
+	border-right: 2px solid #5054c6;
 }
 
 .btn__bottom:before {
-  content: "";
-  height: 2px;
-  width: 11px;
-  background: #5054c6;
-  display: block;
-  position: absolute;
-  left: -5px;
-  bottom: 2px;
-  z-index: 1;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+	content: '';
+	height: 2px;
+	width: 11px;
+	background: #5054c6;
+	display: block;
+	position: absolute;
+	left: -5px;
+	bottom: 2px;
+	z-index: 1;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 .btn__container {
-  height: 100%;
-  background: none;
-  border: none;
-  color: white;
-  padding: 0 24px;
-  height: 48px;
-  border: 2px solid;
-  clip-path: polygon(0% 0%, calc(100% - 8px) 0, 100% 8px, 100% 100%, 95% 100%, calc(0% + 8px) 100%, 0% calc(100% - 8px), 0% 20%);
+	height: 100%;
+	background: none;
+	border: none;
+	color: white;
+	padding: 0 24px;
+	height: 48px;
+	border: 2px solid;
+	clip-path: polygon(
+		0% 0%,
+		calc(100% - 8px) 0,
+		100% 8px,
+		100% 100%,
+		95% 100%,
+		calc(0% + 8px) 100%,
+		0% calc(100% - 8px),
+		0% 20%
+	);
 }

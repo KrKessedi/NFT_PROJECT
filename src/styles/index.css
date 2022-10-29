@@ -10,7 +10,7 @@
   --green-color: #446d44;
   --purple-color: purple;
   --neon-color: #39ff14;
-  --black-color: #000
+  --black-color: #000;
 }
 
 * {
@@ -31,11 +31,9 @@
 .basket {
   color: white;
   text-shadow: 0 0 3px purple;
-
 }
 
 /* scroll */
-
 
 ::-webkit-scrollbar {
   background-color: var(--yellow-color);
@@ -74,11 +72,11 @@
 
 button:active {
   box-shadow: none !important;
-  transition: .8s;
+  transition: 0.8s;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  appearance: none !important;
+  -webkit-appearance: none !important;
   margin: 0 !important;
 }

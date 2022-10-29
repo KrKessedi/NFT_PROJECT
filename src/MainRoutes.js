@@ -7,9 +7,9 @@ import RegistrationPage from './pages/RegistrationPage'
 import LoginPage from './pages/LoginPage'
 import Basket from './components/posts/Basket'
 import PostList from './pages/PostsList'
+import DrawNFT from './components/DrawNFT'
 import PostDetails from './components/posts/PostDetails'
 import EditPostPage from './pages/EditPostPage'
-import Favorites from './components/posts/Favorites'
 import FavoritesPage from './pages/FavoritesPage'
 
 const MainRoutes = () => {
@@ -24,6 +24,7 @@ const MainRoutes = () => {
 				<Route path='/login' element={<LoginPage />} />
 				<Route path='/basket' element={<Basket />} />
 				<Route path='/list' element={<PostList />} />
+				<Route path='/draw-nft' element={<DrawNFT />} />
 				<Route path='/details/:id' element={<PostDetails />} />
 				<Route path='/favorites' element={<FavoritesPage />} />
 			</Routes>
