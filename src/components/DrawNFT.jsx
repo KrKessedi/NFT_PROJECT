@@ -181,7 +181,7 @@ const DrawNFT = () => {
 										<input
 											className='color-draw'
 											type='color'
-											onChange={(e) => setColor(e.target.value)}
+											onChange={e => setColor(e.target.value)}
 										></input>
 									</div>
 								</div>
@@ -211,7 +211,7 @@ const DrawNFT = () => {
 										<input
 											className='color-draw'
 											type='color'
-											onChange={(e) => setColorShadow(e.target.value)}
+											onChange={e => setColorShadow(e.target.value)}
 										></input>
 										<NotInterestedIcon
 											className='color-draw'

@@ -8,6 +8,7 @@ export const usePosts = () => useContext(postsContext)
 let API_NFT = 'http://localhost:8000/nfts'
 
 const INIT_STATE = {
+	allCategories: [],
 	posts: [],
 	onePost: null,
 	imageUrl: '',
@@ -19,6 +20,8 @@ const reducer = (state = INIT_STATE, action) => {
 			return { ...state, posts: action.payload }
 		case 'GET_ONE_POST':
 			return { ...state, onePost: action.payload }
+		case 'GET_CATEGORIES':
+			return { ...state, allCategories: action.payload }
 		case 'GET_IMAGE_URL':
 			return { ...state, imageUrl: action.payload }
 		default:
@@ -52,6 +55,15 @@ const PostContextProvider = ({ children }) => {
 
 		dispatch({
 			type: 'GET_POSTS',
+			payload: data,
+		})
+	}
+
+	async function getCategories() {
+		const { data } = await axios(API_NFT)
+
+		dispatch({
+			type: 'GET_CATEGORIES',
 			payload: data,
 		})
 	}
@@ -100,10 +112,12 @@ const PostContextProvider = ({ children }) => {
 		addImage,
 		saveChanges,
 		fetchByParams,
+		getCategories,
 
 		imageUrl: state.imageUrl,
 		posts: state.posts,
 		onePost: state.onePost,
+		allCategories: state.allCategories,
 	}
 
 	return (

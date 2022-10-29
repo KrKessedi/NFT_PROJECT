@@ -68,7 +68,12 @@ const CreatePost = () => {
 						</div>
 						<div className='field'>
 							<label className='glow text'>Category</label>
-							<select className='select2' name='category' onChange={handleInp}>
+							<select
+								className='select2'
+								name='category'
+								onChange={handleInp}
+								style={{ color: 'black' }}
+							>
 								<option value='cyberpunk'>cyberpunk</option>
 								<option value='man'>man</option>
 								<option value='painting'>painting</option>
@@ -79,6 +84,7 @@ const CreatePost = () => {
 							<div className='field w-24' data-unit='$'>
 								<label className='glow text price-text'>Price</label>
 								<input
+									style={{ appearance: 'none' }}
 									type='number'
 									onChange={handleInp}
 									name='price'

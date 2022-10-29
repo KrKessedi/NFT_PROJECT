@@ -17,8 +17,10 @@ import { usePosts } from '../../contexts/PostContextProvider'
 import { useBasket } from '../../contexts/BasketContextProvider'
 import { useFav } from '../../contexts/FavoriteContext'
 import Like from './Like'
-
 import CommentsModal from '../posts/PostComments'
+import BookmarkTwoToneIcon from '@mui/icons-material/BookmarkTwoTone'
+import BookmarksTwoToneIcon from '@mui/icons-material/BookmarksTwoTone'
+
 const PostCard = ({ item }) => {
 	const [favorite, setFavorite] = useState(false)
 
@@ -47,24 +49,20 @@ const PostCard = ({ item }) => {
 						Title: {item.title}
 					</Typography>
 					<br />
-					<Typography variant='body1' color='text.dark'>
-						{item.category}
-					</Typography>
-					<br />
 					<Typography variant='body2' color='text.success'>
 						{item.price}$
 					</Typography>
 					<br />
 				</CardContent>
-				<h2 onClick={() => setFavorite(!favorite)}>
+				<h2 style={{ color: 'black' }} onClick={() => setFavorite(!favorite)}>
 					{favorite ? (
-						<BookmarkAddedRoundedIcon
+						<BookmarksTwoToneIcon
 							fontSize='large'
 							className='addToFavorite'
 							onClick={() => deletePostInFavorite(item.id)}
 						/>
 					) : (
-						<BookmarkRoundedIcon
+						<BookmarkTwoToneIcon
 							fontSize='large'
 							onClick={() => addPostToFavorite(item)}
 							className='addToFavorite'

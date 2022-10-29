@@ -11,20 +11,19 @@
 	background-size: cover;
 	padding: 60px 30px;
 	min-height: 99vh;
-	height: 100%;
-	width: 100vw;
+	/* height: 100%; */
 	overflow-y: auto;
 	margin-top: -5.8vw;
 }
 
-.login-form > * {
+.login-form>* {
 	font-family: 'Cyberpunk Is Not Dead', sans-serif;
 }
 
 .login-form:before {
 	content: '';
 	position: fixed;
-	top: 10vw;
+	/* top: 10vw; */
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -38,41 +37,33 @@
 	}
 
 	50% {
-		-webkit-clip-path: polygon(
-			0 20px,
-			20px 0,
-			20px 0,
-			20px calc(100% - 20px),
-			0 100%,
-			0 100%
-		);
-		clip-path: polygon(
-			0 20px,
-			20px 0,
-			20px 0,
-			20px calc(100% - 20px),
-			0 100%,
-			0 100%
-		);
+		-webkit-clip-path: polygon(0 20px,
+				20px 0,
+				20px 0,
+				20px calc(100% - 20px),
+				0 100%,
+				0 100%);
+		clip-path: polygon(0 20px,
+				20px 0,
+				20px 0,
+				20px calc(100% - 20px),
+				0 100%,
+				0 100%);
 	}
 
 	100% {
-		-webkit-clip-path: polygon(
-			0 20px,
-			20px 0,
-			100% 0,
-			100% calc(100% - 20px),
-			calc(100% - 20px) 100%,
-			0 100%
-		);
-		clip-path: polygon(
-			0 20px,
-			20px 0,
-			100% 0,
-			100% calc(100% - 20px),
-			calc(100% - 20px) 100%,
-			0 100%
-		);
+		-webkit-clip-path: polygon(0 20px,
+				20px 0,
+				100% 0,
+				100% calc(100% - 20px),
+				calc(100% - 20px) 100%,
+				0 100%);
+		clip-path: polygon(0 20px,
+				20px 0,
+				100% 0,
+				100% calc(100% - 20px),
+				calc(100% - 20px) 100%,
+				0 100%);
 	}
 }
 
@@ -83,41 +74,33 @@
 	}
 
 	50% {
-		-webkit-clip-path: polygon(
-			0 20px,
-			20px 0,
-			20px 0,
-			20px calc(100% - 20px),
-			0 100%,
-			0 100%
-		);
-		clip-path: polygon(
-			0 20px,
-			20px 0,
-			20px 0,
-			20px calc(100% - 20px),
-			0 100%,
-			0 100%
-		);
+		-webkit-clip-path: polygon(0 20px,
+				20px 0,
+				20px 0,
+				20px calc(100% - 20px),
+				0 100%,
+				0 100%);
+		clip-path: polygon(0 20px,
+				20px 0,
+				20px 0,
+				20px calc(100% - 20px),
+				0 100%,
+				0 100%);
 	}
 
 	100% {
-		-webkit-clip-path: polygon(
-			0 20px,
-			20px 0,
-			100% 0,
-			100% calc(100% - 20px),
-			calc(100% - 20px) 100%,
-			0 100%
-		);
-		clip-path: polygon(
-			0 20px,
-			20px 0,
-			100% 0,
-			100% calc(100% - 20px),
-			calc(100% - 20px) 100%,
-			0 100%
-		);
+		-webkit-clip-path: polygon(0 20px,
+				20px 0,
+				100% 0,
+				100% calc(100% - 20px),
+				calc(100% - 20px) 100%,
+				0 100%);
+		clip-path: polygon(0 20px,
+				20px 0,
+				100% 0,
+				100% calc(100% - 20px),
+				calc(100% - 20px) 100%,
+				0 100%);
 	}
 }
 
@@ -160,34 +143,34 @@
 	animation: form-open 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s;
 }
 
-.form-login > * {
+.form-login>* {
 	position: relative;
 	opacity: 0;
 	-webkit-animation: fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 	animation: fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.form-login > *:nth-child(2) {
+.form-login>*:nth-child(2) {
 	-webkit-animation-delay: 1.2s;
 	animation-delay: 1.2s;
 }
 
-.form-login > *:nth-child(3) {
+.form-login>*:nth-child(3) {
 	-webkit-animation-delay: 1.3s;
 	animation-delay: 1.3s;
 }
 
-.form-login > *:nth-child(4) {
+.form-login>*:nth-child(4) {
 	-webkit-animation-delay: 1.4s;
 	animation-delay: 1.4s;
 }
 
-.form-login > *:nth-child(5) {
+.form-login>*:nth-child(5) {
 	-webkit-animation-delay: 1.5s;
 	animation-delay: 1.5s;
 }
 
-.form-login > *:nth-child(6) {
+.form-login>*:nth-child(6) {
 	-webkit-animation-delay: 1.6s;
 	animation-delay: 1.6s;
 }
@@ -202,10 +185,8 @@
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background: linear-gradient(
-			rgba(255, 255, 255, 0.9) 10%,
-			rgba(0, 34, 255, 0.4) 100%
-		),
+	background: linear-gradient(rgba(255, 255, 255, 0.9) 10%,
+			rgba(0, 34, 255, 0.4) 100%),
 		url('https://res.cloudinary.com/dokf7npvg/image/upload/v1540355245/0jbUKoX.jpg');
 	background-position: center;
 	background-size: cover;
@@ -251,22 +232,22 @@
 	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.login-input__element:not(:-moz-placeholder-shown) + .login-input__label {
+.login-input__element:not(:-moz-placeholder-shown)+.login-input__label {
 	top: -16px;
 	left: 0;
 	font-size: 14px;
 	transform: translate3d(0, -5px, 0);
 }
 
-.login-input__element:not(:-ms-login-input-placeholder) + .login-input__label {
+.login-input__element:not(:-ms-login-input-placeholder)+.login-input__label {
 	top: -16px;
 	left: 0;
 	font-size: 14px;
 	transform: translate3d(0, -5px, 0);
 }
 
-.login-input__element:focus + .login-input__label,
-.login-input__element:not(:placeholder-shown) + .login-input__label {
+.login-input__element:focus+.login-input__label,
+.login-input__element:not(:placeholder-shown)+.login-input__label {
 	top: -16px;
 	left: 0;
 	font-size: 14px;
@@ -282,20 +263,16 @@
 	font-size: 16px;
 	font-weight: 600;
 	height: 50px;
-	-webkit-clip-path: polygon(
-		0 0,
-		100% 0,
-		100% calc(100% - 10px),
-		calc(100% - 10px) 100%,
-		0 100%
-	);
-	clip-path: polygon(
-		0 0,
-		100% 0,
-		100% calc(100% - 10px),
-		calc(100% - 10px) 100%,
-		0 100%
-	);
+	-webkit-clip-path: polygon(0 0,
+			100% 0,
+			100% calc(100% - 10px),
+			calc(100% - 10px) 100%,
+			0 100%);
+	clip-path: polygon(0 0,
+			100% 0,
+			100% calc(100% - 10px),
+			calc(100% - 10px) 100%,
+			0 100%);
 	text-transform: uppercase;
 	text-align: left;
 	padding: 0 20px;
@@ -368,7 +345,7 @@
 
 .register-h4 {
 	display: inline-block;
-	text-decoration: underline;
+	/* text-decoration: underline; */
 	font-family: none;
 	cursor: pointer;
 }

@@ -21,7 +21,8 @@ const lightTheme = createTheme({
 })
 
 const PostsList = () => {
-	const { posts, getPosts, fetchByParams } = usePosts()
+	const { posts, getPosts, fetchByParams, getCategories, allCategories } =
+		usePosts()
 
 	useEffect(() => {
 		getPosts()
@@ -58,27 +59,33 @@ const PostsList = () => {
 		return posts.slice(begin, end)
 	}
 
-	// function unique(arr) {
-	// 	let result = []
+	useEffect(() => {
+		getCategories()
+	}, [])
 
-	// 	for (let str of arr) {
-	// 		if (!result.includes(str)) {
-	// 			result.push(str)
-	// 		}
-	// 	}
+	function unique(arr) {
+		let result = []
 
-	// 	return result
-	// }
+		for (let str of arr) {
+			if (!result.includes(str)) {
+				result.push(str)
+			}
+		}
+
+		return result
+	}
 
 	// useEffect(() => {})
-	// let categories = []
-	// posts.map((item) => {
-	// 	categories.push(item.category)
-	// })
+	let categories = []
+	posts.map((item) => {
+		categories.push(item.category)
+	})
 
-	// let uniqCategory = unique(categories)
+	allCategories.forEach((item) => {
+		categories.push(item.category)
+	})
 
-	let uniqCategory = ['cyberpunk', 'man', 'art', 'painting']
+	let uniqCategory = unique(categories)
 
 	return (
 		<>
