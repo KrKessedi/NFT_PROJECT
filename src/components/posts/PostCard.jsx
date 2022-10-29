@@ -20,6 +20,7 @@ import Like from './Like'
 import CommentsModal from '../posts/PostComments'
 import BookmarkTwoToneIcon from '@mui/icons-material/BookmarkTwoTone'
 import BookmarksTwoToneIcon from '@mui/icons-material/BookmarksTwoTone'
+import BootstrapButton from './CardButton'
 
 const PostCard = ({ item }) => {
 	const [favorite, setFavorite] = useState(false)
@@ -31,48 +32,65 @@ const PostCard = ({ item }) => {
 	const navigate = useNavigate()
 
 	return (
-		<div className='card'>
-			<Card style={{ boxShadow: 'none', background: 'white' }}>
+		<Card
+			style={{
+				boxShadow: 'none',
+				background: 'rgb(29	30	34	)',
+				width: '400px',
+				borderRadius: '20px',
+				color: 'white',
+				marginBottom: '2vw',
+			}}
+		>
+			<div className='card__inner'>
 				<CardMedia
-					style={{ borderRadius: '1vw', background: '#000' }}
+					style={{
+						borderRadius: '1vw',
+						background: '#000',
+						// width: '23vw',
+						// height: '20vw',
+						margin: '0 auto',
+					}}
 					component='img'
 					alt={item.image}
 					// height='140'
 					image={item.image}
 				/>
-				<CardContent>
-					<Typography gutterBottom variant='h4' component='div'>
-						Author: {item.author}
-					</Typography>
-					<br />
-					<Typography gutterBottom variant='h4' component='div'>
-						Title: {item.title}
-					</Typography>
-					<br />
-					<Typography variant='body2' color='text.success'>
-						{item.price}$
-					</Typography>
-					<br />
-				</CardContent>
-				<h2 style={{ color: 'black' }} onClick={() => setFavorite(!favorite)}>
-					{favorite ? (
-						<BookmarksTwoToneIcon
-							fontSize='large'
-							className='addToFavorite'
-							onClick={() => deletePostInFavorite(item.id)}
-						/>
-					) : (
-						<BookmarkTwoToneIcon
-							fontSize='large'
-							onClick={() => addPostToFavorite(item)}
-							className='addToFavorite'
-						/>
-					)}
-				</h2>
-				<CommentsModal item={item} />
-				<Like />
-				<CardActions className='btn-block'>
+				<div className='card__inner2'>
+					<div className='card__inner-text'>
+						<div className='author-text'>{item.author}</div>
+
+						<div>Title: {item.title}</div>
+
+						<div>Price: {item.price}$</div>
+					</div>
+					<div className='card-icons'>
+						<Like />
+						<CommentsModal item={item} />
+						<div
+							style={{ color: 'black' }}
+							onClick={() => setFavorite(!favorite)}
+						>
+							{favorite ? (
+								<BookmarksTwoToneIcon
+									fontSize='large'
+									className='addToFavorite'
+									onClick={() => deletePostInFavorite(item.id)}
+								/>
+							) : (
+								<BookmarkTwoToneIcon
+									fontSize='large'
+									onClick={() => addPostToFavorite(item)}
+									className='addToFavorite'
+								/>
+							)}
+						</div>
+					</div>
+				</div>
+
+				<div className='btn-block'>
 					<Button
+						sx={{ fontSize: '10px' }}
 						style={{ boxShadow: ' 0 4px 5px black' }}
 						onClick={() => navigate(`/edit/${item.id}`)}
 						variant='contained'
@@ -112,9 +130,10 @@ const PostCard = ({ item }) => {
 					>
 						<AddShoppingCartIcon />
 					</Button>
-				</CardActions>
-			</Card>
-		</div>
+					{/* <BootstrapButton /> */}
+				</div>
+			</div>
+		</Card>
 	)
 }
 
