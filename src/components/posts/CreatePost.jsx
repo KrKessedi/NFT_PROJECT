@@ -5,8 +5,6 @@ import { postsContext, usePosts } from '../../contexts/PostContextProvider'
 
 const CreatePost = () => {
 	const { imageUrl } = useContext(postsContext)
-	// console.log(props.imageUrl)
-	console.log(imageUrl, 'image')
 	const navigate = useNavigate()
 	const { addPost } = usePosts()
 
@@ -18,12 +16,6 @@ const CreatePost = () => {
 		image: imageUrl,
 		category: 'white',
 	})
-
-	console.log(product.image, 'sdf')
-
-	// useEffect(() => {
-	// 	console.log(imageUrl, 'state')
-	// }, [])
 
 	const handleInp = (e) => {
 		if (e.target.name === 'price') {
@@ -45,6 +37,20 @@ const CreatePost = () => {
 			<div className='column p-1'>
 				<h2 className='play-once'>Create NFT</h2>
 				<div className='create-block__inner'>
+					<div className='field w-24'>
+						<label className='glow text'>URL</label>
+						<div className='create-block__inner-img'>
+							<input
+								className='input2 url2'
+								name='image'
+								value={imageUrl}
+								onChange={handleInp}
+							/>
+							<button className='yellow' onClick={() => navigate('/draw-nft')}>
+								Draw
+							</button>
+						</div>
+					</div>
 					<div>
 						<div className='field'>
 							<label className='glow text'>Title</label>
@@ -74,27 +80,14 @@ const CreatePost = () => {
 							</div>
 						</div>
 					</div>
-					<div className='field w-24'>
-						<label className='glow text'>URL</label>
-						<div>
-							<input
-								className='input2 url2'
-								name='image'
-								value={imageUrl}
-								onChange={handleInp}
-							/>
-							<button className='yellow' onClick={() => navigate('/draw-nft')}>
-								Draw
-							</button>
-						</div>
-					</div>
 				</div>
 				<div className='flex row w-100 justify-space-between flex-wrap'></div>
 				<div className='yellow mb-1'>
-					<div className='flex row w-100 justify-space-between'>
-						<div className='field w-24'>
+					<div>
+						<div className=''>
 							<label className='glow text'>Description</label>
-							<input
+
+							<textarea
 								type='text'
 								name='description'
 								onChange={handleInp}
@@ -104,7 +97,7 @@ const CreatePost = () => {
 					</div>
 				</div>
 				<h2></h2>
-				<div className='flex row mt-1'>
+				<div className='add2'>
 					<button
 						className='green'
 						onClick={() => {

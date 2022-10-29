@@ -8,9 +8,11 @@ const RegistrationPage = () => {
 	const [password, setPassword] = useState('')
 
 	const { registration } = useAuth()
+	let navigate = useNavigate()
 
 	function registerSystem() {
 		registration(username, password)
+		navigate('/login')
 	}
 
 	return (
@@ -41,7 +43,7 @@ const RegistrationPage = () => {
 				</svg>
 				<div className='input'>
 					<input
-						id='name'
+						// id='name'
 						name='name'
 						type='text'
 						className='input__element'
@@ -57,7 +59,7 @@ const RegistrationPage = () => {
 				</div>
 				<div className='input'>
 					<input
-						id='password'
+						// id='password'
 						type='password'
 						name='password'
 						className='input__element'

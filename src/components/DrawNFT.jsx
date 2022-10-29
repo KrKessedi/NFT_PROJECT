@@ -64,14 +64,14 @@ const DrawNFT = () => {
 		setIsDrawing(false)
 	}
 
-	const saveImageToLocal = () => {
+	const saveImageToLocal = (e) => {
 		// let link = e.currentTarget
 		// link.setAttribute('download', 'canvas.png')
 
 		let image = canvasRef.current.toDataURL('image/png')
 		// setImageUrl(image)
 		addImage(image)
-		console.log(image, 'df')
+		// console.log(image, 'df')
 		// link.setAttribute('href', image)
 	}
 

@@ -71,6 +71,11 @@ const PostContextProvider = ({ children }) => {
 		getPosts()
 	}
 
+	async function saveChanges(newPost) {
+		await axios.patch(`${API_NFT}/${newPost.id}`, newPost)
+		getPosts()
+	}
+
 	// values
 
 	const values = {
@@ -79,6 +84,7 @@ const PostContextProvider = ({ children }) => {
 		getOnePost,
 		deletePost,
 		addImage,
+		saveChanges,
 
 		imageUrl: state.imageUrl,
 		posts: state.posts,

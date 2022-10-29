@@ -1,7 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { usePosts } from '../contexts/PostContextProvider'
 import PostCard from '../components/posts/PostCard'
+import Pagination from '@mui/material/Pagination'
 import '../styles/PostsList.css'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+
+const lightTheme = createTheme({
+	palette: {
+		mode: 'dark',
+		primary: {
+			main: '#fff',
+		},
+	},
+})
 
 const PostsList = () => {
 	const { posts, getPosts } = usePosts()
@@ -12,14 +23,48 @@ const PostsList = () => {
 
 	console.log(posts)
 
+	const [page, setPage] = useState(1)
+
+	const itemsOnPage = 6
+
+	const count = Math.ceil(posts.length / itemsOnPage)
+
+	const handlePage = (e, p) => {
+		setPage(p)
+	}
+
+	function currentData() {
+		const begin = (page - 1) * itemsOnPage
+		const end = begin + itemsOnPage
+
+		return posts.slice(begin, end)
+	}
+
 	return (
-		<div className='postsList'>
-			{posts ? (
-				posts.map(item => <PostCard key={item.id} item={item} />)
-			) : (
-				<h3>Loading...</h3>
-			)}
-		</div>
+		<>
+			<div className='postsList'>
+				{posts ? (
+					currentData().map((item) => <PostCard key={item.id} item={item} />)
+				) : (
+					<h3>Loading...</h3>
+				)}
+			</div>
+			<div
+				style={{
+					// width: '60vw',
+					margin: '2vw auto',
+				}}
+			>
+				<ThemeProvider theme={lightTheme}>
+					<Pagination
+						count={count}
+						page={page}
+						onChange={handlePage}
+						variant='outlined'
+					/>
+				</ThemeProvider>
+			</div>
+		</>
 	)
 }
 

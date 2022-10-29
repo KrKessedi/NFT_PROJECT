@@ -20,10 +20,6 @@ import { useAuth } from '../contexts/AuthContextProvider'
 
 const pages = [
 	{
-		type: 'Nfts',
-		path: '/list',
-	},
-	{
 		type: 'Basket',
 		path: '/basket',
 	},
@@ -39,8 +35,6 @@ const pages = [
 
 function ResponsiveAppBar() {
 	const { user, logout, checkAuthorization } = useAuth()
-
-	console.log(user)
 
 	useEffect(() => {
 		if (localStorage.getItem('token')) {
@@ -76,7 +70,7 @@ function ResponsiveAppBar() {
 					<Toolbar disableGutters className='wr'>
 						<CurrencyBitcoinIcon sx={{ color: 'white	' }} />
 						<Typography
-							onClick={() => navigate('/')}
+							onClick={() => navigate('/list')}
 							className='glitchTitle'
 							data-text='NFT'
 							variant='h6'
@@ -155,7 +149,7 @@ function ResponsiveAppBar() {
 								letterSpacing: '.3rem',
 								textDecoration: 'none',
 							}}
-							onClick={() => navigate('/')}
+							onClick={() => navigate('/list')}
 							style={{ cursor: 'pointer' }}
 						>
 							NFT
@@ -163,35 +157,37 @@ function ResponsiveAppBar() {
 						<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 							<Button
 								className='testing'
-								onClick={() => navigate('/list')}
-								sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
-							>
-								List
-							</Button>
-							<Button
-								className='testing'
-								onClick={() => navigate(user ? '/basket' : '/login')}
-								sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
-								// disabled={user ? false : true}
-							>
-								Basket
-							</Button>
-							<Button
-								className='testing'
 								onClick={() => navigate(user ? '/add' : '/login')}
 								sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
-								// disabled={user ? false : true}
 							>
 								Add
 							</Button>
+							<Button
+								className='testing'
+								onClick={() => navigate(user ? '/favorites' : '/login')}
+								sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
+							>
+								Favorites
+							</Button>
 						</Box>
 
+						<Button
+							className='testing'
+							onClick={() => navigate(user ? '/basket' : '/login')}
+							sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
+							// disabled={user ? false : true}
+						>
+							Basket
+						</Button>
 						<Box sx={{ flexGrow: 0 }}>
 							<Tooltip title='Open settings'>
 								<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
 									<Avatar
 										style={{ width: '4vw', height: '4vw', fontSize: '2vw' }}
-										sx={{ bgcolor: 'rgb(16,77,179)', maxWidth: '5vw' }}
+										sx={{
+											bgcolor: '',
+											maxWidth: '5vw',
+										}}
 										alt={user[1]}
 										src='...'
 										// variant='rounded'

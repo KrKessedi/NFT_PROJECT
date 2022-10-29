@@ -15,6 +15,11 @@ button {
 	font: inherit;
 	color: white;
 	outline: none;
+	/* width: 100%; */
+}
+
+.create-block__inner-img {
+	display: flex;
 }
 
 input::-webkit-outer-spin-button,
@@ -30,7 +35,8 @@ input::-webkit-inner-spin-button {
 }
 
 .desc2 {
-	width: 36vw;
+	width: 100%;
+	height: 8vw;
 }
 
 .price2 {
@@ -42,7 +48,7 @@ input::-webkit-inner-spin-button {
 }
 
 .url2 {
-	width: 28.3vw;
+	width: 100%;
 }
 
 :root {
@@ -182,6 +188,12 @@ h6:empty {
 	transform: translateY(-50%);
 }
 
+.add2 {
+	display: flex;
+	justify-content: center;
+	margin: 3vw;
+}
+
 .hoverable {
 	cursor: pointer;
 	transform: scale(0.95);
@@ -288,8 +300,8 @@ h6:empty {
 	height: 1em;
 	opacity: 0.5;
 	position: absolute;
-	bottom: 1em;
-	right: 1em;
+	bottom: 0.7em;
+	right: 0em;
 	width: 1em;
 }
 .field.error label {

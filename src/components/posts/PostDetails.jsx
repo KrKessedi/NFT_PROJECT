@@ -1,25 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { usePosts } from '../../contexts/PostContextProvider'
-import { useEffect } from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-import { CardActionArea } from '@mui/material'
 import '../../styles/PostDetails.css'
-import { useTheme } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import DeleteIcon from '@mui/icons-material/Delete'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
-import EditIcon from '@mui/icons-material/Edit'
-import InfoIcon from '@mui/icons-material/Info'
+import { useBasket } from '../../contexts/BasketContextProvider'
 
 const PostDetails = () => {
 	const { id } = useParams()
 
 	const { getOnePost, onePost } = usePosts()
+	const { addPostToBasket } = useBasket()
 
 	// setTimeout(function () {
 	// 	useEffect(() => {
@@ -30,7 +26,7 @@ const PostDetails = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			getOnePost(id)
-		}, 1000)
+		}, 2000)
 	}, [])
 
 	return (
@@ -38,7 +34,7 @@ const PostDetails = () => {
 			{onePost ? (
 				<div className='card-in-detail'>
 					<Card
-						sx={{ display: 'flex', maxWidth: '70vw', margin: ' 2vw auto' }}
+						sx={{ display: 'flex', maxWidth: '70vw', margin: ' 1.6vw auto' }}
 						style={{
 							border: '2px solid black',
 							padding: '1.7vw',
@@ -86,7 +82,7 @@ const PostDetails = () => {
 						<Button
 							className='addToBasket'
 							style={{ boxShadow: ' 0 4px 5px black' }}
-							// onClick={() => addProductToCart(item)}
+							onClick={() => addPostToBasket(onePost)}
 							// size='large'
 							variant='contained'
 							color='success'
@@ -97,6 +93,7 @@ const PostDetails = () => {
 						<CardMedia
 							style={{
 								borderRadius: '1vw',
+								background: 'black',
 								clipPath:
 									'polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%)',
 							}}
@@ -107,7 +104,7 @@ const PostDetails = () => {
 					</Card>
 				</div>
 			) : (
-				<div className='preloader' style={{ color: 'aqua' }}>
+				<div className='preloader' style={{ marginTop: '13vw', color: 'aqua' }}>
 					<div className='preloader__ring'>
 						<div className='preloader__sector'>L</div>
 						<div className='preloader__sector'>o</div>

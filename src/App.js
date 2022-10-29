@@ -4,16 +4,22 @@ import Navbar from './components/Navbar'
 import Cursor from './components/Cursor'
 import AuthContextProvider from './contexts/AuthContextProvider'
 import PostContextProvider from './contexts/PostContextProvider'
+import BasketContextProvider from './contexts/BasketContextProvider'
+import FavoriteContextProvider from './contexts/FavoriteContext'
 
 const App = () => {
 	return (
-		<AuthContextProvider>
-			<PostContextProvider>
-				<Cursor />
-				<Navbar />
-				<MainRoutes />
-			</PostContextProvider>
-		</AuthContextProvider>
+		<FavoriteContextProvider>
+			<BasketContextProvider>
+				<AuthContextProvider>
+					<PostContextProvider>
+						<Cursor />
+						<Navbar />
+						<MainRoutes />
+					</PostContextProvider>
+				</AuthContextProvider>
+			</BasketContextProvider>
+		</FavoriteContextProvider>
 	)
 }
 
