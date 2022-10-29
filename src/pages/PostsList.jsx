@@ -57,25 +57,27 @@ const PostsList = () => {
 		return posts.slice(begin, end)
 	}
 
-	function unique(arr) {
-		let result = []
+	// function unique(arr) {
+	// 	let result = []
 
-		for (let str of arr) {
-			if (!result.includes(str)) {
-				result.push(str)
-			}
-		}
+	// 	for (let str of arr) {
+	// 		if (!result.includes(str)) {
+	// 			result.push(str)
+	// 		}
+	// 	}
 
-		return result
-	}
+	// 	return result
+	// }
 
-	let categories = []
+	// useEffect(() => {})
+	// let categories = []
+	// posts.map((item) => {
+	// 	categories.push(item.category)
+	// })
 
-	posts.forEach((item) => {
-		categories.push(item.category)
-	})
+	// let uniqCategory = unique(categories)
 
-	let uniqCategory = unique(categories)
+	let uniqCategory = ['cyberpunk', 'man', 'art', 'painting']
 
 	return (
 		<>
