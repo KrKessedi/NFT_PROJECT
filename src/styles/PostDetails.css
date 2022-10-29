@@ -207,9 +207,136 @@
 }
 
 .addToBasket {
-	/* position: absolute; */
+	position: absolute;
 	height: 2.5vw;
-	width: 1000px;
+	width: 100px;
 	top: 34vw;
-	left: -19vw;
+	/* left: -19vw; */
+}
+
+.btn {
+	display: inline-block;
+	position: relative;
+	height: 50px;
+	margin-top: 30vw;
+	left: -20vw;
+	cursor: pointer;
+}
+
+.btn__noise {
+	position: absolute;
+	top: -28%;
+	height: 66px;
+	width: 100%;
+	pointer-events: none;
+}
+
+.btn--primary .btn__container {
+	width: 8vw;
+	background: #6b6ee2;
+	border-color: #5054c6;
+	display: flex;
+	align-items: center;
+	line-height: 10px;
+	pointer-events: none;
+	color: #000000;
+}
+
+.btn--primary .noise__el {
+	fill: #5054c6;
+}
+
+.btn--primary:hover .btn__container {
+	background: #34389f;
+	border-color: #494dc3;
+}
+
+.btn--primary:hover .btn__bottom {
+	background: #34389f;
+	border-color: #494dc3;
+}
+
+.btn--primary:active .btn__container {
+	background: #2e318c;
+	border-color: #3b3fb3;
+	color: #c3c5ec;
+}
+
+.btn--primary:active .btn__bottom {
+	background: #2e318c;
+	border-color: #3b3fb3;
+}
+
+.btn:before,
+.btn:after {
+	content: '';
+	height: 2px;
+	/* width: 11px; */
+	background: #5054c6;
+	display: block;
+	position: absolute;
+	z-index: 1;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	border-radius: 2px;
+	border-radius: 2px;
+}
+
+.btn:before {
+	right: -1.07px;
+	top: 4px;
+}
+
+.btn:after {
+	left: -1.07px;
+	bottom: 6px;
+}
+
+.btn__bottom {
+	position: absolute;
+	content: '';
+	display: block;
+	height: 4px;
+	width: 50%;
+	background: #383cab;
+	pointer-events: none;
+	right: 0px;
+	bottom: 0px;
+	clip-path: polygon(0 0, 100% 0%, 100% 100%, calc(0% + 4px) 100%);
+	border-bottom: 2px solid #5054c6;
+	border-right: 2px solid #5054c6;
+}
+
+.btn__bottom:before {
+	content: '';
+	height: 2px;
+	width: 11px;
+	background: #5054c6;
+	display: block;
+	position: absolute;
+	left: -5px;
+	bottom: 2px;
+	z-index: 1;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.btn__container {
+	height: 100%;
+	background: none;
+	border: none;
+	color: white;
+	padding: 0 24px;
+	height: 48px;
+	border: 2px solid;
+	clip-path: polygon(
+		0% 0%,
+		calc(100% - 8px) 0,
+		100% 8px,
+		100% 100%,
+		95% 100%,
+		calc(0% + 8px) 100%,
+		0% calc(100% - 8px),
+		0% 20%
+	);
 }

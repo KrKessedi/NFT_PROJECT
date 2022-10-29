@@ -16,7 +16,9 @@ import BookmarkAddedRoundedIcon from '@mui/icons-material/BookmarkAddedRounded'
 import { usePosts } from '../../contexts/PostContextProvider'
 import { useBasket } from '../../contexts/BasketContextProvider'
 import { useFav } from '../../contexts/FavoriteContext'
+import Like from './Like'
 
+import CommentsModal from '../posts/PostComments'
 const PostCard = ({ item }) => {
 	const [favorite, setFavorite] = useState(false)
 
@@ -69,7 +71,8 @@ const PostCard = ({ item }) => {
 						/>
 					)}
 				</h2>
-
+				<CommentsModal item={item} />
+				<Like />
 				<CardActions className='btn-block'>
 					<Button
 						style={{ boxShadow: ' 0 4px 5px black' }}

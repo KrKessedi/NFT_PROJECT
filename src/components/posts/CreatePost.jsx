@@ -15,6 +15,7 @@ const CreatePost = () => {
 		price: '',
 		image: imageUrl,
 		category: 'white',
+		commenst: [],
 	})
 
 	const handleInp = (e) => {
