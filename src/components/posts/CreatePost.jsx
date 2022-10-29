@@ -33,6 +33,7 @@ const CreatePost = () => {
 			setProduct(obj)
 		}
 	}
+
 	return (
 		<div className='create-block'>
 			<div className='column p-1'>
@@ -64,10 +65,16 @@ const CreatePost = () => {
 						</div>
 						<div className='field'>
 							<label className='glow text'>Category</label>
-							<select className='select2' name='category' onChange={handleInp}>
+							<input
+								type='text'
+								name='category'
+								className='input2'
+								onChange={handleInp}
+							/>
+							{/* <select className='select2' name='category' onChange={handleInp}>
 								<option value='white'>white</option>
 								<option value='black'>black</option>
-							</select>
+							</select> */}
 						</div>
 						<div className='field'>
 							<div className='field w-24' data-unit='$'>

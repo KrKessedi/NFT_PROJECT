@@ -21,7 +21,8 @@ const lightTheme = createTheme({
 })
 
 const PostsList = () => {
-	const { posts, getPosts, fetchByParams } = usePosts()
+	const { posts, getPosts, fetchByParams, getCategories, allCategories } =
+		usePosts()
 
 	useEffect(() => {
 		getPosts()
@@ -58,6 +59,10 @@ const PostsList = () => {
 		return posts.slice(begin, end)
 	}
 
+	useEffect(() => {
+		getCategories()
+	}, [])
+
 	function unique(arr) {
 		let result = []
 
@@ -72,7 +77,7 @@ const PostsList = () => {
 
 	let categories = []
 
-	posts.forEach(item => {
+	allCategories.forEach(item => {
 		categories.push(item.category)
 	})
 
