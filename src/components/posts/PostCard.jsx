@@ -37,16 +37,24 @@ const PostCard = ({ item }) => {
 					image={item.image}
 				/>
 				<CardContent>
-					<Typography gutterBottom variant='h4' component='div'>
+					<Typography
+						className='post-title'
+						gutterBottom
+						// variant='h4'
+						fontSize={'2vw'}
+						component='div'
+					>
 						Author: {item.author}
 					</Typography>
 					<br />
-					<Typography gutterBottom variant='h4' component='div'>
+					<Typography
+						className='post-desc'
+						gutterBottom
+						// variant='h4'
+						fontSize={'2vw'}
+						component='div'
+					>
 						Title: {item.title}
-					</Typography>
-					<br />
-					<Typography variant='body1' color='text.dark'>
-						{item.category}
 					</Typography>
 					<br />
 					<Typography variant='body2' color='text.success'>
@@ -70,9 +78,13 @@ const PostCard = ({ item }) => {
 					)}
 				</h2>
 
-				<CardActions className='btn-block'>
+				<div className='btn-block'>
 					<Button
-						style={{ boxShadow: ' 0 4px 5px black' }}
+						className='cardBtn'
+						style={{
+							boxShadow: ' 0 4px 5px black',
+							margin: '1vw',
+						}}
 						onClick={() => navigate(`/edit/${item.id}`)}
 						variant='contained'
 						color='warning'
@@ -83,7 +95,11 @@ const PostCard = ({ item }) => {
 					</Button>
 
 					<Button
-						style={{ boxShadow: ' 0 4px 5px black' }}
+						className='cardBtn'
+						style={{
+							boxShadow: ' 0 4px 5px black',
+							margin: '1vw',
+						}}
 						onClick={() => navigate(`/details/${item.id}`)}
 						variant='contained'
 						size='small'
@@ -92,7 +108,11 @@ const PostCard = ({ item }) => {
 						<InfoIcon />
 					</Button>
 					<Button
-						style={{ boxShadow: ' 0 4px 5px black' }}
+						className='cardBtn'
+						style={{
+							boxShadow: ' 0 4px 5px black',
+							margin: '1vw',
+						}}
 						onClick={() => deletePost(item.id)}
 						size='small'
 						variant='contained'
@@ -102,7 +122,11 @@ const PostCard = ({ item }) => {
 						<DeleteIcon />
 					</Button>
 					<Button
-						style={{ boxShadow: ' 0 4px 5px black' }}
+						className='cardBtn'
+						style={{
+							boxShadow: ' 0 4px 5px black',
+							margin: '1vw',
+						}}
 						onClick={() => addPostToBasket(item)}
 						size='small'
 						variant='contained'
@@ -111,7 +135,7 @@ const PostCard = ({ item }) => {
 					>
 						<AddShoppingCartIcon />
 					</Button>
-				</CardActions>
+				</div>
 			</Card>
 		</div>
 	)

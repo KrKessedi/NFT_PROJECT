@@ -9,6 +9,7 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
+import '../styles/adaptive.css/adaptive1.css'
 
 const lightTheme = createTheme({
 	palette: {
@@ -75,10 +76,6 @@ const PostsList = () => {
 		categories.push(item.category)
 	})
 
-	console.log(categories)
-
-	console.log(unique(categories))
-
 	let uniqCategory = unique(categories)
 
 	return (
@@ -102,6 +99,7 @@ const PostsList = () => {
 			</div>
 			<ThemeProvider theme={lightTheme}>
 				<FormControl
+					className='select'
 					variant='filled'
 					color=''
 					sx={{
@@ -125,7 +123,9 @@ const PostsList = () => {
 					>
 						<MenuItem value='all'>All</MenuItem>
 						{uniqCategory.map(item => (
-							<MenuItem value={item}>{item}</MenuItem>
+							<MenuItem key={item} value={item}>
+								{item}
+							</MenuItem>
 						))}
 					</Select>
 				</FormControl>
@@ -148,6 +148,7 @@ const PostsList = () => {
 			>
 				<ThemeProvider theme={lightTheme}>
 					<Pagination
+						className='pagination'
 						count={count}
 						page={page}
 						onChange={handlePage}

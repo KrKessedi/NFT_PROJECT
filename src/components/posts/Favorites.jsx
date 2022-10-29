@@ -27,7 +27,7 @@ const Favorites = () => {
 					<Card
 						style={{
 							borderRadius: '1vw',
-							height: '40vw',
+							height: '620px',
 							padding: '1vw',
 							margin: '1.5vw',
 							border: '4px solid yellow',
