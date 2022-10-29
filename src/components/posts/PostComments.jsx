@@ -79,10 +79,10 @@ export default function BasicModal({ item }) {
 						<br />
 						<ul id='modal-modal-description' sx={{ mt: 2 }}>
 							{item.comments.map(elem => (
-								<>
+								<div key={elem.id}>
 									<li key={elem.id}>{elem}</li>
 									<hr style={{ width: '200px', margin: '1px' }} />
-								</>
+								</div>
 							))}
 						</ul>
 						<br />
