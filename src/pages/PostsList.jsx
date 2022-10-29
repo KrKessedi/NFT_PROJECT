@@ -75,7 +75,11 @@ const PostsList = () => {
 		return result
 	}
 
+	// useEffect(() => {})
 	let categories = []
+	posts.map(item => {
+		categories.push(item.category)
+	})
 
 	allCategories.forEach(item => {
 		categories.push(item.category)

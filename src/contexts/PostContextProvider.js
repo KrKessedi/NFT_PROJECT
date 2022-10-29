@@ -48,7 +48,6 @@ const PostContextProvider = ({ children }) => {
 			type: 'GET_IMAGE_URL',
 			payload: newImg,
 		})
-		console.log(newImg, 'immmm')
 	}
 
 	async function getPosts() {

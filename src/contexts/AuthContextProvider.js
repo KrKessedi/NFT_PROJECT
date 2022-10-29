@@ -44,7 +44,7 @@ const AuthContextProvider = ({ children }) => {
 			localStorage.setItem('username', JSON.stringify(username))
 			setUser(username)
 		} catch (error) {
-			alert('Some inputs sre empty')
+			alert('Wrong username or password')
 			setError('WRONG USERNAME OR PASSWORD', error)
 		}
 	}

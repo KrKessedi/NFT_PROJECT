@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import '../../styles/CreatePost.css'
 import { useNavigate } from 'react-router'
 import { postsContext, usePosts } from '../../contexts/PostContextProvider'
+import '../../adaptive/adaptive-add.css'
 
 const CreatePost = () => {
 	const { imageUrl } = useContext(postsContext)
@@ -14,7 +15,7 @@ const CreatePost = () => {
 		description: '',
 		price: '',
 		image: imageUrl,
-		category: 'white',
+		category: 'cyberpunk',
 		comments: [],
 	})
 
@@ -34,9 +35,11 @@ const CreatePost = () => {
 		}
 	}
 
+	const [drawCheck, setDrawCheck] = useState(false)
+
 	return (
 		<div className='create-block'>
-			<div className='column p-1'>
+			<div className='column block-add p-1'>
 				<h2 className='play-once'>Create NFT</h2>
 				<div className='create-block__inner'>
 					<div className='field w-24'>
@@ -45,7 +48,7 @@ const CreatePost = () => {
 							<input
 								className='input2 url2'
 								name='image'
-								value={imageUrl}
+								value={product.image}
 								onChange={handleInp}
 							/>
 							<button className='yellow' onClick={() => navigate('/draw-nft')}>
@@ -59,30 +62,32 @@ const CreatePost = () => {
 							<input
 								type='text'
 								name='title'
-								className='input2'
+								className='input2 title-add'
 								onChange={handleInp}
 							/>
 						</div>
 						<div className='field'>
 							<label className='glow text'>Category</label>
-							<input
-								type='text'
+							<select
+								className='select2'
 								name='category'
-								className='input2'
 								onChange={handleInp}
-							/>
-							{/* <select className='select2' name='category' onChange={handleInp}>
-								<option value='white'>white</option>
-								<option value='black'>black</option>
-							</select> */}
+								style={{ color: 'black' }}
+							>
+								<option value='cyberpunk'>cyberpunk</option>
+								<option value='man'>man</option>
+								<option value='painting'>painting</option>
+								<option value='art'>art</option>
+							</select>
 						</div>
 						<div className='field'>
 							<div className='field w-24' data-unit='$'>
 								<label className='glow text price-text'>Price</label>
 								<input
-									type='text'
-									name='price'
+									style={{ appearance: 'none' }}
+									type='number'
 									onChange={handleInp}
+									name='price'
 									className='input2 price2'
 								/>
 							</div>
