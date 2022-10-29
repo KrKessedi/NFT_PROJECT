@@ -1,5 +1,5 @@
 .postsList {
-  width: 70.9vw;
+  width: 80.9vw;
   margin: auto;
   margin-top: 15vw;
   display: flex;
@@ -14,11 +14,11 @@
   background-image: radial-gradient(ellipse at 33% 10%,
       #881e1e 0%,
       #191a1e 75%);
-  height: 1780px;
+  /* height: 1780px; */
 }
 
 .editor-field {
-  width: 500px;
+  width: 400px;
   height: 64px;
   position: relative;
   margin: auto;

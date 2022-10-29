@@ -9,6 +9,7 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
+import '../styles/adaptive.css/adaptive1.css'
 
 const lightTheme = createTheme({
 	palette: {
@@ -101,6 +102,7 @@ const PostsList = () => {
 				</div>
 				<ThemeProvider theme={lightTheme}>
 					<FormControl
+						className='select'
 						variant='filled'
 						color=''
 						sx={{
@@ -149,6 +151,7 @@ const PostsList = () => {
 				>
 					<ThemeProvider theme={lightTheme}>
 						<Pagination
+							className='pagination'
 							count={count}
 							page={page}
 							onChange={handlePage}

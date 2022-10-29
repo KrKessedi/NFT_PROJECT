@@ -53,11 +53,11 @@ export default function BasicModal({ item }) {
 						Comments
 					</Typography>
 					<ul id='modal-modal-description' sx={{ mt: 2 }}>
-						{item.comments.map((item) => (
+						{item.comments.map(item => (
 							<li key={item}>{item}</li>
 						))}
 					</ul>
-					<Input value={comment} onChange={(e) => setComment(e.target.value)} />
+					<Input value={comment} onChange={e => setComment(e.target.value)} />
 					<Button onClick={() => saveComment()}>Send</Button>
 				</Box>
 			</Modal>

@@ -118,23 +118,41 @@ function ResponsiveAppBar() {
 								open={Boolean(anchorElNav)}
 								onClose={handleCloseNavMenu}
 								sx={{
-									display: { xs: 'block', md: 'none' },
+									display: { xs: 'block', md: 'none', color: 'black' },
 								}}
 							>
-								{pages.map(page => (
-									<MenuItem key={page.type} onClick={handleCloseNavMenu}>
-										<Typography
-											textAlign='center'
-											onClick={() => navigate(page.path)}
-										>
-											{page.type}
-										</Typography>
-									</MenuItem>
-								))}
+								<MenuItem onClick={handleCloseNavMenu}>
+									<Button
+										// className='testing'
+										onClick={() => navigate(user ? '/add' : '/login')}
+										sx={{ color: 'black', display: 'block' }}
+									>
+										Add
+									</Button>
+								</MenuItem>
+								<MenuItem>
+									<Button
+										// className='testing'
+										onClick={() => navigate(user ? '/favorites' : '/login')}
+										sx={{ color: 'black', display: 'block' }}
+									>
+										Favorites
+									</Button>
+								</MenuItem>
+								<MenuItem>
+									<Button
+										// className='testing'
+										onClick={() => navigate(user ? '/basket' : '/login')}
+										sx={{ color: 'black', display: 'block' }}
+									>
+										Basket
+									</Button>
+								</MenuItem>
 							</Menu>
 						</Box>
 						{/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
 						<Typography
+							className='glitchTitle'
 							variant='h5'
 							noWrap
 							component='a'
@@ -183,10 +201,10 @@ function ResponsiveAppBar() {
 							<Tooltip title='Open settings'>
 								<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
 									<Avatar
-										style={{ width: '4vw', height: '4vw', fontSize: '2vw' }}
+										style={{ width: '50px', height: '50px', fontSize: '2vw' }}
 										sx={{
 											bgcolor: '',
-											maxWidth: '5vw',
+											// maxWidth: '5vw',
 										}}
 										alt={user[1]}
 										src='...'
