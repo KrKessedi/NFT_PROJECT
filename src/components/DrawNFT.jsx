@@ -16,8 +16,6 @@ const DrawNFT = () => {
 	const navigate = useNavigate()
 	const canvasRef = useRef(null)
 	const contextRef = useRef(null)
-	// const [image, setImageUrl] = useState(imageUrl)
-	// console.log(imageUrl, 'drafNFT')
 	const [isDrawing, setIsDrawing] = useState(false)
 
 	const [color, setColor] = useState('white')
@@ -85,7 +83,7 @@ const DrawNFT = () => {
 	}
 
 	const [mQuery, setMQuery] = React.useState({
-		matches: window.innerWidth > 768 ? true : false,
+		matches: window.innerWidth > 880 ? true : false,
 	})
 
 	useEffect(() => {
@@ -99,8 +97,8 @@ const DrawNFT = () => {
 			<div className='gradient-border'>
 				{mQuery && !mQuery.matches ? (
 					<canvas
-						width={500}
-						height={500}
+						width={300}
+						height={300}
 						ref={canvasRef}
 						// onTouchStart={startDrawing}
 						// onTouchMove={draw}
@@ -112,8 +110,8 @@ const DrawNFT = () => {
 					></canvas>
 				) : (
 					<canvas
-						width={300}
-						height={300}
+						width={500}
+						height={500}
 						ref={canvasRef}
 						// onTouchStart={startDrawing}
 						// onTouchMove={draw}
@@ -181,7 +179,7 @@ const DrawNFT = () => {
 										<input
 											className='color-draw'
 											type='color'
-											onChange={e => setColor(e.target.value)}
+											onChange={(e) => setColor(e.target.value)}
 										></input>
 									</div>
 								</div>
@@ -211,7 +209,7 @@ const DrawNFT = () => {
 										<input
 											className='color-draw'
 											type='color'
-											onChange={e => setColorShadow(e.target.value)}
+											onChange={(e) => setColorShadow(e.target.value)}
 										></input>
 										<NotInterestedIcon
 											className='color-draw'
