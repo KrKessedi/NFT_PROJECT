@@ -6,14 +6,13 @@ const Like = () => {
 	const [like, setLike] = React.useState(false)
 
 	return (
-		<h2 onClick={() => setLike(!like)}>
-			Like:
+		<div onClick={() => setLike(!like)}>
 			{like ? (
 				<FavoriteIcon color='error' fontSize='large' />
 			) : (
 				<FavoriteBorderOutlinedIcon sx={{ color: 'black' }} fontSize='large' />
 			)}
-		</h2>
+		</div>
 	)
 }
 

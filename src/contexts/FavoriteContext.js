@@ -33,7 +33,6 @@ const FavoriteContextProvider = ({ children }) => {
 				posts: [],
 			}
 		}
-		console.log(favorites)
 
 		dispatch({
 			type: 'GET_FAVORITES',
@@ -41,7 +40,7 @@ const FavoriteContextProvider = ({ children }) => {
 		})
 	}
 
-	const addPostToFavorite = post => {
+	const addPostToFavorite = (post) => {
 		let favorites = JSON.parse(localStorage.getItem('favorites'))
 
 		if (!favorites) {
@@ -54,12 +53,14 @@ const FavoriteContextProvider = ({ children }) => {
 			item: post,
 		}
 
-		let postToFind = favorites.posts.filter(elem => elem.item.id === post.id)
+		let postToFind = favorites.posts.filter((elem) => elem.item.id === post.id)
 
 		if (postToFind.length === 0) {
 			favorites.posts.push(newPost)
 		} else {
-			favorites.post = favorites.posts.filter(elem => elem.item.id !== post.id)
+			favorites.post = favorites.posts.filter(
+				(elem) => elem.item.id !== post.id
+			)
 		}
 
 		localStorage.setItem('favorites', JSON.stringify(favorites))
@@ -73,7 +74,7 @@ const FavoriteContextProvider = ({ children }) => {
 	function deletePostInFavorite(id) {
 		let favorites = JSON.parse(localStorage.getItem('favorites'))
 
-		favorites.posts = favorites.posts.filter(elem => elem.item.id !== id)
+		favorites.posts = favorites.posts.filter((elem) => elem.item.id !== id)
 
 		localStorage.setItem('favorites', JSON.stringify(favorites))
 

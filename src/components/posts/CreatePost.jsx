@@ -19,7 +19,7 @@ const CreatePost = () => {
 		comments: [],
 	})
 
-	const handleInp = e => {
+	const handleInp = (e) => {
 		if (e.target.name === 'price') {
 			let obj = {
 				...product,

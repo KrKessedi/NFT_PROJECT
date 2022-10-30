@@ -77,11 +77,11 @@ const PostsList = () => {
 
 	// useEffect(() => {})
 	let categories = []
-	posts.map(item => {
+	posts.map((item) => {
 		categories.push(item.category)
 	})
 
-	allCategories.forEach(item => {
+	allCategories.forEach((item) => {
 		categories.push(item.category)
 	})
 
@@ -90,70 +90,52 @@ const PostsList = () => {
 	return (
 		<>
 			<div className='parentList'>
-				<div className='editor-field '>
-					<div className='editor-field__label-container'>
-						<label className='editor-field__label'>Name</label>
-					</div>
-
-					<div className='editor-field__container'>
+				<div className='parentList__inner'>
+					<div className='container123'>
 						<input
 							autoComplete='off'
+							id='box'
 							type='text'
-							className='editor-field__input'
+							placeholder='Search anything...'
+							className='search__box'
 							value={search}
-							onChange={e => setSearch(e.target.value)}
+							onChange={(e) => setSearch(e.target.value)}
 						/>
+						<i className='fas fa-search search__icon' id='icon'></i>
 					</div>
-					<span className='editor-field__bottom'></span>
-					<div className='editor-field__noise'></div>
-				</div>
-				<ThemeProvider theme={lightTheme}>
-					<FormControl
-						className='select'
-						variant='filled'
-						color=''
-						sx={{
-							m: 1,
-							minWidth: 120,
-							zIndex: 10,
-							position: 'absolute',
-							top: '9vw',
-							left: '66vw',
-						}}
-					>
-						<InputLabel id='demo-simple-select-standard-label'>
-							Category
-						</InputLabel>
-						<Select
-							labelId='demo-simple-select-standard-label'
-							id='demo-simple-select-standard'
-							onChange={e => fetchByParams('category', e.target.value)}
-							label='Age'
-							defaultValue='all'
-						>
-							<MenuItem value='all'>All</MenuItem>
-							{uniqCategory.map(item => (
-								<MenuItem key={item} value={item}>
-									{item}
-								</MenuItem>
-							))}
-						</Select>
-					</FormControl>
-				</ThemeProvider>
 
+					<ThemeProvider theme={lightTheme}>
+						<div className='category-block2'>
+							<Select
+								sx={{ marginTop: '6px' }}
+								labelId='demo-simple-select-standard-label'
+								id='demo-simple-select-standard'
+								onChange={(e) => fetchByParams('category', e.target.value)}
+								label='Age'
+								defaultValue='all'
+								size='small'
+							>
+								<MenuItem value='all'>All</MenuItem>
+								{uniqCategory.map((item) => (
+									<MenuItem key={item} value={item}>
+										{item}
+									</MenuItem>
+								))}
+							</Select>
+						</div>
+					</ThemeProvider>
+				</div>
 				<div className='postsList'>
 					{posts ? (
-						currentData().map(item => <PostCard key={item.id} item={item} />)
+						currentData().map((item) => <PostCard key={item.id} item={item} />)
 					) : (
 						<h3>Loading...</h3>
 					)}
 				</div>
 				<div
 					style={{
-						width: '20vw',
-						margin: 'auto',
-						// position: 'absolute',
-						// bottom: '0vw',
+						display: 'flex',
+						justifyContent: 'center',
 					}}
 				>
 					<ThemeProvider theme={lightTheme}>

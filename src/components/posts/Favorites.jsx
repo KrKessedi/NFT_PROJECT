@@ -17,12 +17,10 @@ const Favorites = () => {
 		getFavorite()
 	}, [])
 
-	console.log(favorites)
-
 	return (
 		<>
-			{favorites?.posts.map(elem => (
-				<div className='relativeCard'>
+			{favorites?.posts.map((elem) => (
+				<div key={elem.item.id} className='relativeCard'>
 					<div className='subCard'></div>
 					<Card
 						style={{

@@ -8,6 +8,7 @@ import { postsContext } from '../../contexts/PostContextProvider'
 import SendIcon from '@mui/icons-material/Send'
 import axios from 'axios'
 import TextsmsTwoToneIcon from '@mui/icons-material/TextsmsTwoTone'
+import ChatIcon from '@mui/icons-material/Chat'
 
 const style = {
 	position: 'absolute',
@@ -43,9 +44,13 @@ export default function BasicModal({ item }) {
 
 	return (
 		<div>
-			<Button variant='outlined' color='secondary' onClick={handleOpen}>
-				Comments <TextsmsTwoToneIcon />
-			</Button>
+			<ChatIcon
+				variant='outlined'
+				color='secondary'
+				onClick={handleOpen}
+				style={{ width: '35px', height: '35px' }}
+			/>
+
 			<Modal
 				open={open}
 				onClose={handleClose}
