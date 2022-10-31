@@ -1,26 +1,56 @@
 import React, { useState, useContext } from 'react'
 import Button from '@mui/material/Button'
 import Modal from '@mui/material/Modal'
-import TextsmsTwoToneIcon from '@mui/icons-material/TextsmsTwoTone'
+import { useNavigate } from 'react-router-dom'
+
 import { Box } from '@mui/material'
 import { Input } from '@mui/material'
 import { useBasket } from '../contexts/BasketContextProvider'
 import '../styles/orderForm.css'
 
-const OrderForm = () => {
+const style = {
+	position: 'absolute',
+	top: '50%',
+	left: '50%',
+	transform: 'translate(-50%, -50%)',
+	width: 400,
+	bgcolor: 'background.paper',
+	border: '2px solid #000',
+	boxShadow: 24,
+	pt: 2,
+	px: 4,
+	pb: 3,
+}
+
+function ChildModal() {
 	const { getBasket } = useBasket()
 
-	const [open, setOpen] = useState(false)
-	const handleOpen = () => setOpen(true)
-	const handleClose = () => setOpen(false)
+	let navigate = useNavigate()
 
 	const [email, setEmail] = useState('')
 	const [phone, setPhone] = useState('')
 	const [addres, setAddres] = useState('')
 
+	const [open, setOpen] = React.useState(false)
+	const handleOpen = () => {
+		setOpen(true)
+	}
+	const handleClose = () => {
+		setOpen(false)
+	}
+
 	function basketCleaner() {
+		if (!email || !phone || !addres) {
+			alert('Some inputs are empty')
+			return
+		}
+
+		setAddres('')
+		setPhone('')
+		setEmail('')
+
+		navigate('/')
 		localStorage.removeItem('basket')
-		alert('The order has been placed')
 		getBasket()
 		handleClose()
 	}
@@ -38,26 +68,30 @@ const OrderForm = () => {
 			<Modal
 				open={open}
 				onClose={handleClose}
-				aria-labelledby='modal-modal-title'
-				aria-describedby='modal-modal-description'
-				style={{
-					width: '30vw',
-					height: '300px',
-					margin: '10vw auto',
-					background: 'rgb(0,0,0,.97)',
-					borderRadius: '1vw',
-				}}
+				aria-labelledby='parent-modal-title'
+				aria-describedby='parent-modal-description'
 			>
-				<Box style={{ width: '50%', margin: 'auto' }}>
+				<Box
+					style={{
+						width: '30%',
+						margin: '15vw auto',
+						padding: '3vw',
+						background: 'rgb(0,0,0,.8)',
+						borderRadius: '1vw',
+					}}
+				>
 					<div
 						style={{
 							width: '90%',
+							margin: 'auto',
 							display: 'flex',
 							flexDirection: 'column',
 							marginTop: '3vw',
 						}}
 					>
 						<Input
+							value={email}
+							onChange={e => setEmail(e.target.value)}
 							required
 							className='orderInput'
 							color='secondary'
@@ -72,6 +106,8 @@ const OrderForm = () => {
 							}}
 						/>
 						<Input
+							value={phone}
+							onChange={e => setPhone(e.target.value)}
 							required
 							className='orderInput'
 							color='secondary'
@@ -86,6 +122,8 @@ const OrderForm = () => {
 							}}
 						/>
 						<Input
+							value={addres}
+							onChange={e => setAddres(e.target.value)}
 							required
 							className='orderInput'
 							color='secondary'
@@ -101,7 +139,12 @@ const OrderForm = () => {
 						/>
 						<button
 							tybe='submit'
-							style={{ background: 'white', color: 'black' }}
+							style={{
+								background: 'white',
+								color: 'black',
+								width: '300px',
+								margin: 'auto',
+							}}
 							onClick={basketCleaner}
 						>
 							Buy
@@ -113,4 +156,4 @@ const OrderForm = () => {
 	)
 }
 
-export default OrderForm
+export default ChildModal
