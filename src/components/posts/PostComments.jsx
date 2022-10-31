@@ -28,7 +28,7 @@ export default function BasicModal({ item }) {
 	const handleOpen = () => setOpen(true)
 	const handleClose = () => setOpen(false)
 	const [comment, setComment] = useState('')
-	const [postComment, setPostComment] = useState(null)
+	const [postComment, setPostComment] = useState([])
 
 	async function saveComment() {
 		item.comments.push(comment)
