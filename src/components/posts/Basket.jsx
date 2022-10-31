@@ -10,7 +10,7 @@ import { Button, Typography } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { useBasket } from '../../contexts/BasketContextProvider'
 import '../../styles/Basket.css'
-import OrderForm from '../OrderForm'
+import ChildModal from '../OrderForm'
 
 function Basket() {
 	const { getBasket, basket, changePostCount, deletePostInBasket } = useBasket()
@@ -115,7 +115,7 @@ function Basket() {
 				align='right'
 			>
 				Total price: {basket?.totalPrice}$ <br />
-				{basket ? <OrderForm /> : null}
+				{basket ? <ChildModal /> : null}
 			</Typography>
 		</TableContainer>
 	)
