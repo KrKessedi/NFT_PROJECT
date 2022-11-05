@@ -7,28 +7,26 @@ import RegistrationPage from './pages/RegistrationPage'
 import LoginPage from './pages/LoginPage'
 import Basket from './components/posts/Basket'
 import PostList from './pages/PostsList'
-<<<<<<< HEAD
-import DrawNFTPage from './pages/DrawNFTPage'
-=======
+import DrawNFT from './components/DrawNFT'
 import PostDetails from './components/posts/PostDetails'
->>>>>>> d0cf46f5eefc4f545555704d589bb945323eb20e
+import EditPostPage from './pages/EditPostPage'
+import FavoritesPage from './pages/FavoritesPage'
 
 const MainRoutes = () => {
 	return (
 		<>
 			<Routes>
-				<Route path='/' element={<HomePage />} />
+				<Route path='/' element={<PostList />} />
 				<Route path='*' element={<NotFoundPage />} />
 				<Route path='/add' element={<CreatePostPage />} />
+				<Route path='/edit/:id' element={<EditPostPage />} />
 				<Route path='/reg' element={<RegistrationPage />} />
 				<Route path='/login' element={<LoginPage />} />
 				<Route path='/basket' element={<Basket />} />
 				<Route path='/list' element={<PostList />} />
-<<<<<<< HEAD
-				<Route path='/draw-nft' element={<DrawNFTPage />} />
-=======
+				<Route path='/draw-nft' element={<DrawNFT />} />
 				<Route path='/details/:id' element={<PostDetails />} />
->>>>>>> d0cf46f5eefc4f545555704d589bb945323eb20e
+				<Route path='/favorites' element={<FavoritesPage />} />
 			</Routes>
 		</>
 	)

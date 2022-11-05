@@ -1,8 +1,12 @@
 import React from 'react'
-import glitch from 'glitch'
+import EditPost from '../components/posts/EditPost'
 
 const EditPostPage = () => {
-	return <div>EditPostPage</div>
+	return (
+		<div>
+			<EditPost />
+		</div>
+	)
 }
 
 export default EditPostPage

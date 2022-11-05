@@ -13,51 +13,86 @@ import InfoIcon from '@mui/icons-material/Info'
 import '../../styles/PostCard.css'
 import BookmarkRoundedIcon from '@mui/icons-material/BookmarkRounded'
 import BookmarkAddedRoundedIcon from '@mui/icons-material/BookmarkAddedRounded'
+import { usePosts } from '../../contexts/PostContextProvider'
+import { useBasket } from '../../contexts/BasketContextProvider'
+import { useFav } from '../../contexts/FavoriteContext'
+import Like from './Like'
+import CommentsModal from '../posts/PostComments'
+import BookmarkTwoToneIcon from '@mui/icons-material/BookmarkTwoTone'
+import BookmarksTwoToneIcon from '@mui/icons-material/BookmarksTwoTone'
+import BootstrapButton from './CardButton'
 
 const PostCard = ({ item }) => {
 	const [favorite, setFavorite] = useState(false)
 
+	const { deletePost } = usePosts()
+	const { addPostToBasket } = useBasket()
+	const { addPostToFavorite, deletePostInFavorite } = useFav()
+
 	const navigate = useNavigate()
 
 	return (
-		<div className='card'>
-			<Card style={{ boxShadow: 'none', background: 'white' }}>
+		<Card
+			style={{
+				boxShadow: 'none',
+				background: 'rgb(29	30	34	)',
+				width: '400px',
+				borderRadius: '20px',
+				color: 'white',
+				marginBottom: '2vw',
+			}}
+		>
+			<div className='card__inner'>
 				<CardMedia
-					style={{ borderRadius: '1vw' }}
+					style={{
+						borderRadius: '1vw',
+						background: '#000',
+						// width: '23vw',
+						// height: '20vw',
+						margin: '0 auto',
+					}}
 					component='img'
 					alt={item.image}
 					// height='140'
 					image={item.image}
 				/>
-				<CardContent>
-					<Typography gutterBottom variant='h4' component='div'>
-						Author: {item.author}
-					</Typography>
-					<br />
-					<Typography variant='body1' color='text.dark'>
-						{item.category}
-					</Typography>
-					<br />
-					<Typography variant='body2' color='text.success'>
-						{item.price}$
-					</Typography>
-					<br />
-				</CardContent>
-				<h2 onClick={() => setFavorite(!favorite)}>
-					{favorite ? (
-						<BookmarkAddedRoundedIcon
-							fontSize='large'
-							className='addToFavorite'
-						/>
-					) : (
-						<BookmarkRoundedIcon fontSize='large' className='addToFavorite' />
-					)}
-				</h2>
+				<div className='card__inner2'>
+					<div className='card__inner-text'>
+						<div className='author-text'>{item.author}</div>
 
-				<CardActions className='btn-block'>
+						<div>Title: {item.title}</div>
+
+						<div>Price: {item.price}$</div>
+					</div>
+					<div className='card-icons'>
+						<Like />
+						<CommentsModal item={item} />
+						<div
+							style={{ color: 'black' }}
+							onClick={() => setFavorite(!favorite)}
+						>
+							{favorite ? (
+								<BookmarksTwoToneIcon
+									fontSize='large'
+									className='addToFavorite'
+									onClick={() => deletePostInFavorite(item.id)}
+								/>
+							) : (
+								<BookmarkTwoToneIcon
+									fontSize='large'
+									onClick={() => addPostToFavorite(item)}
+									className='addToFavorite'
+								/>
+							)}
+						</div>
+					</div>
+				</div>
+
+				<div className='btn-block'>
 					<Button
+						sx={{ fontSize: '10px' }}
 						style={{ boxShadow: ' 0 4px 5px black' }}
-						// onClick={() => navigate(`/edit/${item.id}`)}
+						onClick={() => navigate(`/edit/${item.id}`)}
 						variant='contained'
 						color='warning'
 						size='small'
@@ -77,7 +112,7 @@ const PostCard = ({ item }) => {
 					</Button>
 					<Button
 						style={{ boxShadow: ' 0 4px 5px black' }}
-						// onClick={() => deleteProduct(item.id)}
+						onClick={() => deletePost(item.id)}
 						size='small'
 						variant='contained'
 						color='error'
@@ -87,7 +122,7 @@ const PostCard = ({ item }) => {
 					</Button>
 					<Button
 						style={{ boxShadow: ' 0 4px 5px black' }}
-						// onClick={() => addProductToCart(item)}
+						onClick={() => addPostToBasket(item)}
 						size='small'
 						variant='contained'
 						color='success'
@@ -95,9 +130,10 @@ const PostCard = ({ item }) => {
 					>
 						<AddShoppingCartIcon />
 					</Button>
-				</CardActions>
-			</Card>
-		</div>
+					{/* <BootstrapButton /> */}
+				</div>
+			</div>
+		</Card>
 	)
 }
 
