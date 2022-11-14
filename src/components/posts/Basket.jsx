@@ -19,6 +19,8 @@ function Basket() {
 		getBasket()
 	}, [])
 
+	console.log(basket)
+
 	return (
 		<TableContainer className='basket' component={Paper} sx={{ my: 15 }}>
 			<Table sx={{ minWidth: 650 }} aria-label='simple table'>

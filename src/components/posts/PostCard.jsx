@@ -38,6 +38,7 @@ const PostCard = ({ item }) => {
 		>
 			<div className='card__inner'>
 				<CardMedia
+					className='card-image'
 					style={{
 						borderRadius: '1vw',
 						background: '#000',
