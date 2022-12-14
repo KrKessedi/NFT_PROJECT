@@ -13,7 +13,7 @@ const App = () => {
 			<BasketContextProvider>
 				<AuthContextProvider>
 					<PostContextProvider>
-						<Cursor />
+						{/* <Cursor /> */}
 						<Navbar />
 						<MainRoutes />
 					</PostContextProvider>

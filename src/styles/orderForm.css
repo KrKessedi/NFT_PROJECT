@@ -1,3 +1,4 @@
-.orderInput:active {
-  box-shadow: 0 0 0 transparent;
+.orderInput:focus {
+  box-shadow: none !important;
+  border: none !important;
 }

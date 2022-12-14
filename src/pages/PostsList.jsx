@@ -77,11 +77,11 @@ const PostsList = () => {
 
 	// useEffect(() => {})
 	let categories = []
-	posts.map((item) => {
+	posts.map(item => {
 		categories.push(item.category)
 	})
 
-	allCategories.forEach((item) => {
+	allCategories.forEach(item => {
 		categories.push(item.category)
 	})
 
@@ -99,7 +99,7 @@ const PostsList = () => {
 							placeholder='Search anything...'
 							className='search__box'
 							value={search}
-							onChange={(e) => setSearch(e.target.value)}
+							onChange={e => setSearch(e.target.value)}
 						/>
 						<i className='fas fa-search search__icon' id='icon'></i>
 					</div>
@@ -110,13 +110,13 @@ const PostsList = () => {
 								sx={{ marginTop: '6px' }}
 								labelId='demo-simple-select-standard-label'
 								id='demo-simple-select-standard'
-								onChange={(e) => fetchByParams('category', e.target.value)}
+								onChange={e => fetchByParams('category', e.target.value)}
 								label='Age'
 								defaultValue='all'
 								size='small'
 							>
 								<MenuItem value='all'>All</MenuItem>
-								{uniqCategory.map((item) => (
+								{uniqCategory.map(item => (
 									<MenuItem key={item} value={item}>
 										{item}
 									</MenuItem>
@@ -127,7 +127,7 @@ const PostsList = () => {
 				</div>
 				<div className='postsList'>
 					{posts ? (
-						currentData().map((item) => <PostCard key={item.id} item={item} />)
+						currentData().map(item => <PostCard key={item.id} item={item} />)
 					) : (
 						<h3>Loading...</h3>
 					)}

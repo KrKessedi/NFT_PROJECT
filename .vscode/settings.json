@@ -1,0 +1,95 @@
+{
+	"editor.wordWrap": "on",
+	"editor.smoothScrolling": true,
+	"editor.suggestSelection": "first",
+	"explorer.compactFolders": false,
+	"explorer.confirmDragAndDrop": false,
+	"emmet.triggerExpansionOnTab": true,
+	// "emmet.showExpandedAbbreviation": "never",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"prettier.semi": false,
+	"prettier.useTabs": true,
+	"editor.formatOnPaste": true,
+	"prettier.singleQuote": true,
+	"prettier.jsxSingleQuote": true,
+	"prettier.arrowParens": "avoid",
+	"editor.fontSize": 14,
+	"editor.fontLigatures": true,
+	// "editor.insertSpaces": false,
+	"editor.detectIndentation": true,
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.codeActionsOnSave": {},
+	"explorer.confirmDelete": false,
+	"editor.formatOnSave": true,
+	"files.autoSave": "off",
+	"workbench.iconTheme": "material-icon-theme",
+	"RainbowBrackets.depreciation-notice": true,
+	"workbench.colorTheme": "Bearded Theme Black & Gold",
+	"diffEditor.ignoreTrimWhitespace": false,
+	"[css]": {
+		"editor.defaultFormatter": "vscode.css-language-features"
+	},
+	"workbench.sideBar.location": "right",
+	"editor.minimap.enabled": false,
+	"liveServer.settings.donotShowInfoMsg": true,
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+	"git.autofetch": true,
+	"editor.renderWhitespace": "none",
+	"files.associations": {
+		"*.js": "javascript"
+	},
+	"gitlens.advanced.messages": {
+		"suppressLineUncommittedWarning": true
+	},
+	"indentRainbow.colors": [
+		"rgb(173, 218, 170)",
+		"rgb(235, 221, 35)",
+		"rgb(243, 55, 55)",
+		"rgb(3, 70, 255)",
+		"rgb(0, 255, 255)"
+	],
+	"indentRainbow.indicatorStyle": "light",
+	"indentRainbow.lightIndicatorStyleLineWidth": 1.5,
+	"color-highlight.markerType": "underline",
+	"color-highlight.matchWords": true,
+	"helium-icon-theme.folders.theme": "classic",
+	"helium-icon-theme.hidesExplorerArrows": true,
+	"helium-icon-theme.folders.color": "#fff",
+
+	"RainbowBrackets.colorMode": "Independent",
+	"RainbowBrackets.consecutivePairColors": [
+		"()",
+		"[]",
+		"{}",
+		["rgb(3, 70, 255)", "rgb(255,255,255)", "rgb(255, 255, 0)"]
+	],
+
+	"terminal.integrated.cursorStyle": "line",
+	"terminal.integrated.cursorWidth": 1,
+	"terminal.integrated.customGlyphs": true,
+	"terminal.integrated.cursorBlinking": true,
+	"terminal.integrated.altClickMovesCursor": true,
+	"files.exclude": {
+		"**/node_modules": true,
+		"**/.gitignore": true,
+		"**/package-lock.json": true,
+		"**/README.md": true,
+		"**/desktop.ini": true
+	},
+	"editor.cursorBlinking": "expand",
+	"editor.cursorSmoothCaretAnimation": true,
+	"editor.cursorStyle": "line",
+	"editor.cursorWidth": 3,
+	"editor.tabSize": 2,
+	"editor.hover.enabled": false,
+	// "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, ",
+	"editor.lineHeight": 19
+}

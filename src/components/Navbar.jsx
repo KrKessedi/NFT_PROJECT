@@ -206,7 +206,7 @@ function ResponsiveAppBar() {
 											bgcolor: '',
 											// maxWidth: '5vw',
 										}}
-										alt={user[1]}
+										alt={user[0] == '"' ? user[1] : user[0]}
 										src='...'
 										// variant='rounded'
 									/>

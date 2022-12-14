@@ -12,10 +12,6 @@
 	display: flex;
 }
 
-.author-text {
-	/* margin-top: 1vw; */
-}
-
 .btn-block {
 	width: 100%;
 	display: flex;
@@ -23,5 +19,25 @@
 	margin-top: 1.5vw;
 }
 
-.addToFavorite {
+.card-image:hover {
+	transform: scale(1.110);
+	box-shadow: 0 -10px 30px white;
+	transition: .5s;
+}
+
+.card-image {
+	transition: .3s;
+}
+
+.comment-input {
+	margin-right: 40px;
+	background-color: rgb(255, 255, 255, .2);
+	/* box-shadow: 0 2px 0 white; */
+	border-radius: .3vw .3vw 0 0;
+	color: white;
+	padding-left: 2vw;
+}
+
+.comment-input:focus {
+	box-shadow: none !important;
 }

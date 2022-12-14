@@ -63,7 +63,7 @@ export default function BasicModal({ item }) {
 						margin: '10vw auto',
 						width: '600px',
 						// height: '40vw',
-						padding: '3vw',
+						// padding: '3vw',
 					}}
 				>
 					<Box
@@ -95,14 +95,7 @@ export default function BasicModal({ item }) {
 							placeholder='message'
 							value={comment}
 							color='secondary'
-							style={{
-								marginRight: '40px',
-								backgroundColor: 'rgb(255,255,255, .2)',
-								boxShadow: '0 2px 0 white',
-								borderRadius: '.3vw .3vw 0 0',
-								color: 'white',
-								paddingLeft: '2vw',
-							}}
+							className='comment-input'
 							onChange={e => setComment(e.target.value)}
 						/>
 						<Button
