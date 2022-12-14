@@ -63,7 +63,7 @@ const DrawNFT = () => {
 		setIsDrawing(false)
 	}
 
-	const saveImageToLocal = (e) => {
+	const saveImageToLocal = e => {
 		// let link = e.currentTarget
 		// link.setAttribute('download', 'canvas.png')
 
@@ -144,7 +144,7 @@ const DrawNFT = () => {
 								type='range'
 								min={5}
 								max={40}
-								onChange={(e) => setPenSize(e.target.value)}
+								onChange={e => setPenSize(e.target.value)}
 								defaultValue={5}
 							/>
 							<div className='instrument-adaptive'>
@@ -179,7 +179,7 @@ const DrawNFT = () => {
 										<input
 											className='color-draw'
 											type='color'
-											onChange={(e) => setColor(e.target.value)}
+											onChange={e => setColor(e.target.value)}
 										></input>
 									</div>
 								</div>
@@ -209,7 +209,7 @@ const DrawNFT = () => {
 										<input
 											className='color-draw'
 											type='color'
-											onChange={(e) => setColorShadow(e.target.value)}
+											onChange={e => setColorShadow(e.target.value)}
 										></input>
 										<NotInterestedIcon
 											className='color-draw'
@@ -226,7 +226,7 @@ const DrawNFT = () => {
 									saveImageToLocal()
 								}}
 							>
-								Download
+								Save
 							</button>
 						</div>
 					</div>
