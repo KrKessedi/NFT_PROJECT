@@ -3,6 +3,11 @@
 First need to install react-glitch-effect "npm i --force react-glitch-effect",
 Then you can install node-modules
 
+# ВНИМАНИЕ
+
+Сначала необходимо установить react-glitch-effect "npm i --force react-glitch-effect",
+затем вы можете установить node-modules
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
