@@ -1,3 +1,8 @@
+# ATTENTION
+
+First need to install react-glitch-effect "npm i --force react-glitch-effect",
+Then you can install node-modules
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -70,4 +75,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ## Use
+
 ### `npm i --force react-glitch-effect`
