@@ -12,7 +12,7 @@ import { usePosts } from '../../contexts/PostContextProvider'
 import { useBasket } from '../../contexts/BasketContextProvider'
 import { useFav } from '../../contexts/FavoriteContext'
 import Like from './Like'
-import CommentsModal from '../posts/PostComments'
+import CommentsModal from './PostComments'
 import BookmarkTwoToneIcon from '@mui/icons-material/BookmarkTwoTone'
 import BookmarksTwoToneIcon from '@mui/icons-material/BookmarksTwoTone'
 
