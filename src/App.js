@@ -7,13 +7,15 @@ import PostContextProvider from './contexts/PostContextProvider'
 import BasketContextProvider from './contexts/BasketContextProvider'
 import FavoriteContextProvider from './contexts/FavoriteContext'
 
+const view = window.innerWidth
+
 const App = () => {
 	return (
 		<FavoriteContextProvider>
 			<BasketContextProvider>
 				<AuthContextProvider>
 					<PostContextProvider>
-						<Cursor />
+						{view > 800 ? <Cursor /> : null}
 						<Navbar />
 						<MainRoutes />
 					</PostContextProvider>
