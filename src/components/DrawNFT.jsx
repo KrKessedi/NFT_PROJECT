@@ -95,9 +95,9 @@ const DrawNFT = () => {
 						width={300}
 						height={300}
 						ref={canvasRef}
-						// onTouchStart={startDrawing}
-						// onTouchMove={draw}
-						// onTouchEnd={stopDrawing}
+						onTouchStart={startDrawing}
+						onTouchMove={draw}
+						onTouchEnd={stopDrawing}
 						onMouseDown={startDrawing}
 						onMouseMove={draw}
 						onMouseUp={stopDrawing}
@@ -108,9 +108,9 @@ const DrawNFT = () => {
 						width={500}
 						height={500}
 						ref={canvasRef}
-						// onTouchStart={startDrawing}
-						// onTouchMove={draw}
-						// onTouchEnd={stopDrawing}
+						onTouchStart={startDrawing}
+						onTouchMove={draw}
+						onTouchEnd={stopDrawing}
 						onMouseDown={startDrawing}
 						onMouseMove={draw}
 						onMouseUp={stopDrawing}
