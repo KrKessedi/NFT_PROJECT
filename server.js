@@ -21,7 +21,7 @@ server.use(middlewares)
 // Add this before server.use(router)
 server.use(router)
 // Listen to port
-server.listen(8000, () => {
+server.listen(3000, () => {
 	console.log('JSON Server is running')
 })
 
