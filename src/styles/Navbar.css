@@ -4,11 +4,9 @@
 
 .navbar {
 	/* background: linear-gradient(170deg, rgb(0, 0, 0, .9) 30%, rgb(255, 255, 255, .7)); */
-	background-image: linear-gradient(
-			180deg,
+	background-image: linear-gradient(180deg,
 			transparent,
-			rgba(255, 255, 255, 0.5) 99%
-		),
+			rgba(255, 255, 255, 0.5) 99%),
 		url(https://www.cyberpunk.net/build/images/home3/razor-top-2a7b2d6f.svg);
 	background-position: 100%, rotate(180deg);
 	background-repeat: no-repeat;
@@ -21,20 +19,18 @@
 	border-bottom: 4px solid black;
 	border-left: 4px solid black;
 	border-right: 4px solid black;
-	clip-path: polygon(
-		1% 35%,
-		0 20%,
-		0 0,
-		99% 0,
-		100% 15%,
-		100% 100%,
-		54% 100%,
-		50% 89%,
-		46% 100%,
-		0 100%,
-		0 80%,
-		1% 65%
-	);
+	clip-path: polygon(1% 35%,
+			0 20%,
+			0 0,
+			99% 0,
+			100% 15%,
+			100% 100%,
+			54% 100%,
+			50% 89%,
+			46% 100%,
+			0 100%,
+			0 80%,
+			1% 65%);
 	opacity: 1 !important;
 }
 
@@ -42,9 +38,9 @@
 	position: absolute;
 	height: 5vw;
 	width: 92.5vw;
-	left: 4vw;
-	top: 0;
-	box-shadow: 0 0 30px 30px rgb(43, 228, 234);
+	left: 3.3vw;
+	top: -10px;
+	box-shadow: 0 0 30px 40px rgb(43, 228, 234);
 }
 
 .testing {
@@ -257,7 +253,7 @@
 	}
 }
 
-.wr > .glitch {
+.wr>.glitch {
 	color: #fff !important;
 }
 

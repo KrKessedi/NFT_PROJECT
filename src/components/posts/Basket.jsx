@@ -10,6 +10,7 @@ import { Button, Typography } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { useBasket } from '../../contexts/BasketContextProvider'
 import '../../styles/Basket.css'
+import ChildModal from '../OrderForm'
 
 function Basket() {
 	const { getBasket, basket, changePostCount, deletePostInBasket } = useBasket()
@@ -18,10 +19,7 @@ function Basket() {
 		getBasket()
 	}, [])
 
-	function basketCleaner() {
-		localStorage.removeItem('basket')
-		getBasket()
-	}
+	console.log(basket)
 
 	return (
 		<TableContainer className='basket' component={Paper} sx={{ my: 15 }}>
@@ -118,15 +116,8 @@ function Basket() {
 				component='div'
 				align='right'
 			>
-				Total price: {basket?.totalPrice}$
-				<Button
-					onClick={basketCleaner}
-					color='success'
-					variant='contained'
-					style={{ marginLeft: '1vw', marginRight: '2.6vw' }}
-				>
-					Buy Now
-				</Button>
+				Total price: {basket?.totalPrice}$ <br />
+				{basket ? <ChildModal /> : null}
 			</Typography>
 		</TableContainer>
 	)

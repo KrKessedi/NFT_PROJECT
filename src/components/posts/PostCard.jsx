@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
-import Typography from '@mui/material/Typography'
 import { useNavigate } from 'react-router-dom'
 import Button from '@mui/material/Button'
 import DeleteIcon from '@mui/icons-material/Delete'
@@ -11,16 +8,13 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 import EditIcon from '@mui/icons-material/Edit'
 import InfoIcon from '@mui/icons-material/Info'
 import '../../styles/PostCard.css'
-import BookmarkRoundedIcon from '@mui/icons-material/BookmarkRounded'
-import BookmarkAddedRoundedIcon from '@mui/icons-material/BookmarkAddedRounded'
 import { usePosts } from '../../contexts/PostContextProvider'
 import { useBasket } from '../../contexts/BasketContextProvider'
 import { useFav } from '../../contexts/FavoriteContext'
 import Like from './Like'
-import CommentsModal from '../posts/PostComments'
+import CommentsModal from './PostComments'
 import BookmarkTwoToneIcon from '@mui/icons-material/BookmarkTwoTone'
 import BookmarksTwoToneIcon from '@mui/icons-material/BookmarksTwoTone'
-import BootstrapButton from './CardButton'
 
 const PostCard = ({ item }) => {
 	const [favorite, setFavorite] = useState(false)
@@ -44,6 +38,7 @@ const PostCard = ({ item }) => {
 		>
 			<div className='card__inner'>
 				<CardMedia
+					className='card-image'
 					style={{
 						borderRadius: '1vw',
 						background: '#000',
