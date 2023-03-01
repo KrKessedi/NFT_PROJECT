@@ -52,7 +52,7 @@ function Basket() {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{basket?.posts.map(row => (
+					{basket?.posts.map((row) => (
 						<TableRow
 							key={row.item.id}
 							sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -77,7 +77,7 @@ function Basket() {
 									style={{ width: '2vw', textAlign: 'center' }}
 									type='number'
 									value={row.count}
-									onChange={e => changePostCount(e.target.value, row.item.id)}
+									onChange={(e) => changePostCount(e.target.value, row.item.id)}
 								/>
 							</TableCell>
 							<TableCell sx={{ color: 'white' }} align='center'>

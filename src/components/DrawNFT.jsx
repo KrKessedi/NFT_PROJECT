@@ -3,10 +3,7 @@ import '../styles/DrawNFT.css'
 import GlitchSquiggly from 'react-glitch-effect/core/GlitchClip'
 import GlitchText from 'react-glitch-effect/core/GlitchText'
 import ModeEditOutlineRoundedIcon from '@mui/icons-material/ModeEditOutlineRounded'
-import RotateLeftIcon from '@mui/icons-material/RotateLeft'
-import RotateRightIcon from '@mui/icons-material/RotateRight'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
-import CreatePost from './posts/CreatePost'
 import { useNavigate } from 'react-router-dom'
 import { postsContext } from '../contexts/PostContextProvider'
 import '../adaptive/adaptive-draw.css'
@@ -68,10 +65,8 @@ const DrawNFT = () => {
 		// link.setAttribute('download', 'canvas.png')
 
 		let image = canvasRef.current.toDataURL('image/png')
-		// setImageUrl(image)
-		addImage(image)
-		// console.log(image, 'df')
 		// link.setAttribute('href', image)
+		addImage(image)
 	}
 
 	const setToDraw = () => {
@@ -219,7 +214,7 @@ const DrawNFT = () => {
 									</div>
 								</div>
 							</div>
-							<button
+							<a
 								id='download_image_link'
 								onClick={() => {
 									navigate('/add')
@@ -227,7 +222,7 @@ const DrawNFT = () => {
 								}}
 							>
 								Download
-							</button>
+							</a>
 						</div>
 					</div>
 				</GlitchText>

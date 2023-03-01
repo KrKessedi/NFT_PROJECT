@@ -8,7 +8,8 @@ import { postsContext } from '../../contexts/PostContextProvider'
 import SendIcon from '@mui/icons-material/Send'
 import axios from 'axios'
 import TextsmsTwoToneIcon from '@mui/icons-material/TextsmsTwoTone'
-import ChatIcon from '@mui/icons-material/Chat'
+// import ChatIcon from '@mui/icons-material/Chat'
+import ChatTwoToneIcon from '@mui/icons-material/ChatTwoTone'
 
 const style = {
 	position: 'absolute',
@@ -28,7 +29,7 @@ export default function BasicModal({ item }) {
 	const handleOpen = () => setOpen(true)
 	const handleClose = () => setOpen(false)
 	const [comment, setComment] = useState('')
-	const [postComment, setPostComment] = useState(null)
+	const [postComment, setPostComment] = useState([])
 
 	async function saveComment() {
 		item.comments.push(comment)
@@ -44,9 +45,8 @@ export default function BasicModal({ item }) {
 
 	return (
 		<div>
-			<ChatIcon
-				variant='outlined'
-				color='secondary'
+			<ChatTwoToneIcon
+				// variant='outlined'
 				onClick={handleOpen}
 				style={{ width: '35px', height: '35px' }}
 			/>
