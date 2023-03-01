@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useContext } from 'react'
 import '../styles/DrawNFT.css'
-import GlitchSquiggly from 'react-glitch-effect/core/GlitchClip'
-import GlitchText from 'react-glitch-effect/core/GlitchText'
+// import GlitchSquiggly from 'react-glitch-effect/core/GlitchClip'
+// import GlitchText from 'react-glitch-effect/core/GlitchText'
 import ModeEditOutlineRoundedIcon from '@mui/icons-material/ModeEditOutlineRounded'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
 import { useNavigate } from 'react-router-dom'
@@ -118,115 +118,112 @@ const DrawNFT = () => {
 					></canvas>
 				)}
 			</div>
-			<GlitchSquiggly onHover>
-				<GlitchText>
-					<div className='instrument-draw'>
-						<div className='instrument-draw__inner'>
-							<div className='instrument-draw__inner-inst'>
-								<ModeEditOutlineRoundedIcon
+			{/* <GlitchSquiggly onHover>
+				<GlitchText> */}
+			<div className='instrument-draw'>
+				<div className='instrument-draw__inner'>
+					<div className='instrument-draw__inner-inst'>
+						<ModeEditOutlineRoundedIcon fontSize='large' onClick={setToDraw} />
+						<img
+							src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABA0lEQVRIie3VSw6CMBCA4T8egJ1ET6B38GBuPYPiiYwXkCZsfSyMHkJc0MZqgM4UcMUkk1DI8EHbSWEMfSRABlxtZvbeoJECOVD+ZAHM/40OiofQQXAp2iueAkaBujR02HCxqMtdDDpFN711eYlBTx3REjhrUH8jPTrC2xg0t+NNJCreXP70FsDMe7ZWouJ2akO1eDTaVhTCxWjCZ00N1ZqGomnNpfVAdZypi2pwbT03W7jQFFnEtZoaheoQ18J1LacON9XSF/SCwvfmCr3IPzA6oS4k7eT/aVOf944PhtYBBlja7HV6JbgkD17tMTBm0gI/gRWwB+6CDy2961dgPMb/4g3RIv06WnlM6QAAAABJRU5ErkJggg=='
+							width='35px'
+							height='35px'
+							onClick={setToErase}
+						/>
+					</div>
+					<input
+						className='range'
+						type='range'
+						min={5}
+						max={40}
+						onChange={e => setPenSize(e.target.value)}
+						defaultValue={5}
+					/>
+					<div className='instrument-adaptive'>
+						<div>
+							<h3>Color</h3>
+							<div className='instrument-draw__inner-color'>
+								<div
+									className='color-draw'
+									style={{ background: 'black' }}
+									onClick={() => setColor('black')}
+								></div>
+								<div
+									className='color-draw'
+									style={{ background: 'white' }}
+									onClick={() => setColor('white')}
+								></div>
+								<div
+									className='color-draw'
+									style={{ background: 'green' }}
+									onClick={() => setColor('green')}
+								></div>
+								<div
+									className='color-draw'
+									style={{ background: 'blue' }}
+									onClick={() => setColor('blue')}
+								></div>
+								<div
+									className='color-draw'
+									style={{ background: 'red' }}
+									onClick={() => setColor('red')}
+								></div>
+								<input
+									className='color-draw'
+									type='color'
+									onChange={e => setColor(e.target.value)}
+								></input>
+							</div>
+						</div>
+						<div>
+							<h3>Color Shadow</h3>
+							<div className='instrument-draw__inner-color'>
+								<div
+									className='color-draw'
+									style={{ background: 'white' }}
+									onClick={() => setColorShadow('white')}
+								></div>
+								<div
+									className='color-draw'
+									style={{ background: 'purple' }}
+									onClick={() => setColorShadow('purple')}
+								></div>
+								<div
+									className='color-draw'
+									style={{ background: 'blue' }}
+									onClick={() => setColorShadow('blue')}
+								></div>
+								<div
+									className='color-draw'
+									style={{ background: 'red' }}
+									onClick={() => setColorShadow('red')}
+								></div>
+								<input
+									className='color-draw'
+									type='color'
+									onChange={e => setColorShadow(e.target.value)}
+								></input>
+								<NotInterestedIcon
+									className='color-draw'
 									fontSize='large'
-									onClick={setToDraw}
-								/>
-								<img
-									src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABA0lEQVRIie3VSw6CMBCA4T8egJ1ET6B38GBuPYPiiYwXkCZsfSyMHkJc0MZqgM4UcMUkk1DI8EHbSWEMfSRABlxtZvbeoJECOVD+ZAHM/40OiofQQXAp2iueAkaBujR02HCxqMtdDDpFN711eYlBTx3REjhrUH8jPTrC2xg0t+NNJCreXP70FsDMe7ZWouJ2akO1eDTaVhTCxWjCZ00N1ZqGomnNpfVAdZypi2pwbT03W7jQFFnEtZoaheoQ18J1LacON9XSF/SCwvfmCr3IPzA6oS4k7eT/aVOf944PhtYBBlja7HV6JbgkD17tMTBm0gI/gRWwB+6CDy2961dgPMb/4g3RIv06WnlM6QAAAABJRU5ErkJggg=='
-									width='35px'
-									height='35px'
-									onClick={setToErase}
+									onClick={() => setColorShadow('transparent')}
 								/>
 							</div>
-							<input
-								className='range'
-								type='range'
-								min={5}
-								max={40}
-								onChange={e => setPenSize(e.target.value)}
-								defaultValue={5}
-							/>
-							<div className='instrument-adaptive'>
-								<div>
-									<h3>Color</h3>
-									<div className='instrument-draw__inner-color'>
-										<div
-											className='color-draw'
-											style={{ background: 'black' }}
-											onClick={() => setColor('black')}
-										></div>
-										<div
-											className='color-draw'
-											style={{ background: 'white' }}
-											onClick={() => setColor('white')}
-										></div>
-										<div
-											className='color-draw'
-											style={{ background: 'green' }}
-											onClick={() => setColor('green')}
-										></div>
-										<div
-											className='color-draw'
-											style={{ background: 'blue' }}
-											onClick={() => setColor('blue')}
-										></div>
-										<div
-											className='color-draw'
-											style={{ background: 'red' }}
-											onClick={() => setColor('red')}
-										></div>
-										<input
-											className='color-draw'
-											type='color'
-											onChange={e => setColor(e.target.value)}
-										></input>
-									</div>
-								</div>
-								<div>
-									<h3>Color Shadow</h3>
-									<div className='instrument-draw__inner-color'>
-										<div
-											className='color-draw'
-											style={{ background: 'white' }}
-											onClick={() => setColorShadow('white')}
-										></div>
-										<div
-											className='color-draw'
-											style={{ background: 'purple' }}
-											onClick={() => setColorShadow('purple')}
-										></div>
-										<div
-											className='color-draw'
-											style={{ background: 'blue' }}
-											onClick={() => setColorShadow('blue')}
-										></div>
-										<div
-											className='color-draw'
-											style={{ background: 'red' }}
-											onClick={() => setColorShadow('red')}
-										></div>
-										<input
-											className='color-draw'
-											type='color'
-											onChange={e => setColorShadow(e.target.value)}
-										></input>
-										<NotInterestedIcon
-											className='color-draw'
-											fontSize='large'
-											onClick={() => setColorShadow('transparent')}
-										/>
-									</div>
-								</div>
-							</div>
-							<a
-								id='download_image_link'
-								onClick={() => {
-									navigate('/add')
-									saveImageToLocal()
-								}}
-							>
-								Save
-							</a>
 						</div>
 					</div>
-				</GlitchText>
-			</GlitchSquiggly>
+					<a
+						id='download_image_link'
+						onClick={() => {
+							navigate('/add')
+							saveImageToLocal()
+						}}
+					>
+						Save
+					</a>
+				</div>
+			</div>
+			{/* </GlitchText>
+			</GlitchSquiggly> */}
 		</div>
 	)
 }
