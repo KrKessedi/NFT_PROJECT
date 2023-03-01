@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 export const postsContext = createContext()
 export const usePosts = () => useContext(postsContext)
 
-let API_NFT = 'http://localhost:3000/nfts'
+let API_NFT = 'http://localhost:8000/nfts'
 
 const INIT_STATE = {
 	allCategories: [],
