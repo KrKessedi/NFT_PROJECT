@@ -38,7 +38,10 @@ export default function BasicModal({ item }) {
 			...item,
 			comments: postComment,
 		}
-		await axios.patch(`http://localhost:8000/nfts/${item.id}`, obj)
+		await axios.patch(
+			`https://vercel-theta-orpin.vercel.app/nfts/${item.id}`,
+			obj
+		)
 		// console.log(obj)
 		setComment('')
 	}
