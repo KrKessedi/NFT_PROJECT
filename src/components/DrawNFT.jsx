@@ -36,6 +36,7 @@ const DrawNFT = () => {
 	}, [color, colorShadow, penSize])
 
 	const startDrawing = ({ nativeEvent }) => {
+		console.log(nativeEvent)
 		const { offsetX, offsetY } = nativeEvent
 		contextRef.current.beginPath()
 		contextRef.current.moveTo(offsetX, offsetY)
@@ -95,26 +96,32 @@ const DrawNFT = () => {
 						width={300}
 						height={300}
 						ref={canvasRef}
-						onTouchStart={startDrawing}
-						onTouchMove={draw}
-						onTouchEnd={stopDrawing}
-						// onMouseDown={startDrawing}
-						// onMouseMove={draw}
-						// onMouseUp={stopDrawing}
-						// onMouseLeave={stopDrawing}
+						onPointerDown={startDrawing}
+						onPointerMove={draw}
+						onPointerUp={stopDrawing}
+						// onTouchStart={startDrawing}
+						// onTouchMove={draw}
+						// onTouchEnd={stopDrawing}
+						onMouseDown={startDrawing}
+						onMouseMove={draw}
+						onMouseUp={stopDrawing}
+						onMouseLeave={stopDrawing}
 					></canvas>
 				) : (
 					<canvas
 						width={500}
 						height={500}
 						ref={canvasRef}
-						onTouchStart={startDrawing}
-						onTouchMove={draw}
-						onTouchEnd={stopDrawing}
-						// onMouseDown={startDrawing}
-						// onMouseMove={draw}
-						// onMouseUp={stopDrawing}
-						// onMouseLeave={stopDrawing}
+						onPointerDown={startDrawing}
+						onPointerMove={draw}
+						onPointerUp={stopDrawing}
+						// onTouchStart={startDrawing}
+						// onTouchMove={draw}
+						// onTouchEnd={stopDrawing}
+						onMouseDown={startDrawing}
+						onMouseMove={draw}
+						onMouseUp={stopDrawing}
+						onMouseLeave={stopDrawing}
 					></canvas>
 				)}
 			</div>
