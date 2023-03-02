@@ -8,7 +8,15 @@
       "price": 50,
       "category": "art",
       "title": "people123",
-      "comments": []
+      "comments": [
+        "hello World",
+        "kak ty",
+        "vse horosho",
+        "a ty",
+        "byvaet",
+        "ahah",
+        "eto smeshno"
+      ]
     },
     {
       "image": "https://gateway.pinata.cloud/ipfs/Qmb86L8mUphwJGzLPwXNTRiK1S4scBdj9cc2Sev3s8uLiB/2.png",

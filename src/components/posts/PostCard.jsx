@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from '@mui/material/Card'
 import CardMedia from '@mui/material/CardMedia'
 import { useNavigate } from 'react-router-dom'
@@ -15,14 +15,15 @@ import Like from './Like'
 import CommentsModal from './PostComments'
 import BookmarkTwoToneIcon from '@mui/icons-material/BookmarkTwoTone'
 import BookmarksTwoToneIcon from '@mui/icons-material/BookmarksTwoTone'
+import ChatTwoToneIcon from '@mui/icons-material/ChatTwoTone'
 
 const PostCard = ({ item }) => {
 	const [favorite, setFavorite] = useState(false)
 
-	const { deletePost } = usePosts()
+	const { deletePost, modal, changeModalFlag } = usePosts()
 	const { addPostToBasket } = useBasket()
 	const { addPostToFavorite, deletePostInFavorite } = useFav()
-
+	// console.log(modal)
 	const navigate = useNavigate()
 
 	return (
@@ -61,7 +62,13 @@ const PostCard = ({ item }) => {
 					</div>
 					<div className='card-icons'>
 						<Like />
-						<CommentsModal item={item} />
+						<ChatTwoToneIcon
+							variant='outlined'
+							onClick={() => {
+								changeModalFlag(!modal, item)
+							}}
+							style={{ width: '35px', height: '35px' }}
+						/>
 						<div
 							style={{ color: 'black' }}
 							onClick={() => setFavorite(!favorite)}

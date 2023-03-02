@@ -5,13 +5,14 @@ import { useNavigate, useLocation } from 'react-router-dom'
 export const postsContext = createContext()
 export const usePosts = () => useContext(postsContext)
 
-let API_NFT = 'https://vercel-theta-orpin.vercel.app/nfts'
+let API_NFT = 'https://vercel-json-server-inky.vercel.app/nfts'
 
 const INIT_STATE = {
 	allCategories: [],
 	posts: [],
 	onePost: null,
 	imageUrl: '',
+	modal: false,
 }
 
 const reducer = (state = INIT_STATE, action) => {
@@ -24,6 +25,8 @@ const reducer = (state = INIT_STATE, action) => {
 			return { ...state, allCategories: action.payload }
 		case 'GET_IMAGE_URL':
 			return { ...state, imageUrl: action.payload }
+		case 'CHANGE_MODAL':
+			return { ...state, modal: action.payload }
 		default:
 			return state
 	}
@@ -102,6 +105,12 @@ const PostContextProvider = ({ children }) => {
 		navigate(url)
 	}
 
+	const changeModalFlag = (flag, post) => {
+		console.log(flag)
+		dispatch({ type: 'CHANGE_MODAL', payload: flag })
+		dispatch({ type: 'GET_ONE_POST', payload: post })
+	}
+
 	// values
 
 	const values = {
@@ -113,11 +122,13 @@ const PostContextProvider = ({ children }) => {
 		saveChanges,
 		fetchByParams,
 		getCategories,
+		changeModalFlag,
 
 		imageUrl: state.imageUrl,
 		posts: state.posts,
 		onePost: state.onePost,
 		allCategories: state.allCategories,
+		modal: state.modal,
 	}
 
 	return (

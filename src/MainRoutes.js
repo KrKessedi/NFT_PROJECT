@@ -11,10 +11,14 @@ import DrawNFT from './components/DrawNFT'
 import PostDetails from './components/posts/PostDetails'
 import EditPostPage from './pages/EditPostPage'
 import FavoritesPage from './pages/FavoritesPage'
+import { usePosts } from './contexts/PostContextProvider'
+import PostComments from './components/posts/PostComments'
 
 const MainRoutes = () => {
+	const { modal } = usePosts()
 	return (
 		<>
+			{modal && <PostComments />}
 			<Routes>
 				<Route path='/' element={<PostList />} />
 				<Route path='*' element={<NotFoundPage />} />

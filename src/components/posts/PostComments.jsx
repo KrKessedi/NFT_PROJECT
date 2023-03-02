@@ -1,62 +1,56 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import Modal from '@mui/material/Modal'
 import { Input } from '@mui/material'
-import { postsContext } from '../../contexts/PostContextProvider'
+import { usePosts } from '../../contexts/PostContextProvider'
 import SendIcon from '@mui/icons-material/Send'
 import axios from 'axios'
-import TextsmsTwoToneIcon from '@mui/icons-material/TextsmsTwoTone'
-// import ChatIcon from '@mui/icons-material/Chat'
-import ChatTwoToneIcon from '@mui/icons-material/ChatTwoTone'
 
-const style = {
-	position: 'absolute',
-	top: '50%',
-	left: '50%',
-	transform: 'translate(-50%, -50%)',
-	width: 400,
-	bgcolor: 'background.paper',
-	border: '2px solid #000',
-	boxShadow: 24,
-	p: 4,
-}
-
-export default function BasicModal({ item }) {
-	const { saveChanges, onePost } = useContext(postsContext)
-	const [open, setOpen] = useState(false)
-	const handleOpen = () => setOpen(true)
-	const handleClose = () => setOpen(false)
+export default function PostComments({ item }) {
+	const { modal, changeModalFlag, getPosts, onePost } = usePosts()
+	item = onePost
 	const [comment, setComment] = useState('')
-	const [postComment, setPostComment] = useState([])
+	useEffect(() => {
+		getPosts()
+	}, [saveComment])
+	// const [postComments, setPostComments] = useState(item.comments)
+	const postComments = useRef(item.comments)
+	const handleComm = () => {
+		// setPostComments([...postComments, comment])
+		// item.comments.push(comment)
+		postComments.current = [...postComments.current, comment]
+		saveComment()
+	}
+
+	// useEffect(() => {
+	// 	saveComment()
+	// }, [postComments])
 
 	async function saveComment() {
-		item.comments.push(comment)
-		setPostComment(item.comments)
-		let obj = {
-			...item,
-			comments: postComment,
+		onePost.comments.push(comment)
+		console.log(postComments)
+		try {
+			await axios.patch(
+				`https://vercel-json-server-inky.vercel.app/nfts/${item.id}`,
+				{
+					comments: postComments.current,
+				}
+			)
+			console.log(postComments)
+		} catch (e) {
+			console.log(e.message)
 		}
-		await axios.patch(
-			`https://vercel-theta-orpin.vercel.app/nfts/${item.id}`,
-			obj
-		)
-		// console.log(obj)
 		setComment('')
 	}
 
 	return (
 		<div>
-			<ChatTwoToneIcon
-				// variant='outlined'
-				onClick={handleOpen}
-				style={{ width: '35px', height: '35px' }}
-			/>
-
 			<Modal
-				open={open}
-				onClose={handleClose}
+				key={item.id}
+				open={modal}
+				onClose={() => changeModalFlag(false, item)}
 				aria-labelledby='modal-modal-title'
 				aria-describedby='modal-modal-description'
 			>
@@ -86,9 +80,9 @@ export default function BasicModal({ item }) {
 						</Typography>
 						<br />
 						<ul id='modal-modal-description' sx={{ mt: 2 }}>
-							{item.comments.map(elem => (
-								<div key={item.id}>
-									<li key={elem.id}>{elem}</li>
+							{item.comments.map((elem, i) => (
+								<div key={i}>
+									<li>{elem}</li>
 									<hr style={{ width: '200px', margin: '1px' }} />
 								</div>
 							))}
@@ -99,12 +93,14 @@ export default function BasicModal({ item }) {
 							value={comment}
 							color='secondary'
 							className='comment-input'
-							onChange={e => setComment(e.target.value)}
+							onChange={e => {
+								setComment(e.target.value)
+							}}
 						/>
 						<Button
 							variant='contained'
 							color='success'
-							onClick={() => saveComment()}
+							onClick={handleComm}
 							endIcon={<SendIcon />}
 						>
 							Send
