@@ -43,7 +43,8 @@ const DrawNFT = () => {
 		contextRef.current.lineTo(offsetX, offsetY)
 		contextRef.current.stroke()
 		setIsDrawing(true)
-		// nativeEvent.preventDefault()
+		nativeEvent.preventDefault()
+		console.log(nativeEvent)
 	}
 
 	const draw = ({ nativeEvent }) => {
@@ -53,7 +54,7 @@ const DrawNFT = () => {
 		const { offsetX, offsetY } = nativeEvent
 		contextRef.current.lineTo(offsetX, offsetY)
 		contextRef.current.stroke()
-		// nativeEvent.preventDefault()
+		nativeEvent.preventDefault()
 	}
 
 	const stopDrawing = () => {
@@ -112,9 +113,9 @@ const DrawNFT = () => {
 						width={500}
 						height={500}
 						ref={canvasRef}
-						onPointerDown={startDrawing}
-						onPointerMove={draw}
-						onPointerUp={stopDrawing}
+						// onPointerDown={startDrawing}
+						// onPointerMove={draw}
+						// onPointerUp={stopDrawing}
 						// onTouchStart={startDrawing}
 						// onTouchMove={draw}
 						// onTouchEnd={stopDrawing}

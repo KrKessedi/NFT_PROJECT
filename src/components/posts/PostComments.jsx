@@ -8,32 +8,24 @@ import { usePosts } from '../../contexts/PostContextProvider'
 import SendIcon from '@mui/icons-material/Send'
 import axios from 'axios'
 
-export default function PostComments({ item }) {
-	const { modal, changeModalFlag, getPosts, onePost } = usePosts()
-	item = onePost
+export default function PostComments() {
+	const { modal, changeModalFlag, onePost } = usePosts()
+
 	const [comment, setComment] = useState('')
-	useEffect(() => {
-		getPosts()
-	}, [saveComment])
-	// const [postComments, setPostComments] = useState(item.comments)
-	const postComments = useRef(item.comments)
+
+	// const [postComments, setPostComments] = useState(onePost.comments)
+	const postComments = useRef(onePost.comments)
 	const handleComm = () => {
-		// setPostComments([...postComments, comment])
-		// item.comments.push(comment)
 		postComments.current = [...postComments.current, comment]
 		saveComment()
 	}
-
-	// useEffect(() => {
-	// 	saveComment()
-	// }, [postComments])
 
 	async function saveComment() {
 		onePost.comments.push(comment)
 		console.log(postComments)
 		try {
 			await axios.patch(
-				`https://vercel-json-server-inky.vercel.app/nfts/${item.id}`,
+				`https://vercel-json-server-inky.vercel.app/nfts/${onePost.id}`,
 				{
 					comments: postComments.current,
 				}
@@ -48,9 +40,9 @@ export default function PostComments({ item }) {
 	return (
 		<div>
 			<Modal
-				key={item.id}
+				key={onePost.id}
 				open={modal}
-				onClose={() => changeModalFlag(false, item)}
+				onClose={() => changeModalFlag(false, onePost)}
 				aria-labelledby='modal-modal-title'
 				aria-describedby='modal-modal-description'
 			>
@@ -59,6 +51,7 @@ export default function PostComments({ item }) {
 						backgroundPositionY: '10%',
 						margin: '10vw auto',
 						width: '600px',
+						outline: 'none',
 						// height: '40vw',
 						// padding: '3vw',
 					}}
@@ -80,7 +73,7 @@ export default function PostComments({ item }) {
 						</Typography>
 						<br />
 						<ul id='modal-modal-description' sx={{ mt: 2 }}>
-							{item.comments.map((elem, i) => (
+							{onePost.comments.map((elem, i) => (
 								<div key={i}>
 									<li>{elem}</li>
 									<hr style={{ width: '200px', margin: '1px' }} />
