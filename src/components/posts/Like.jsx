@@ -10,7 +10,7 @@ const Like = () => {
 			{like ? (
 				<FavoriteIcon color='error' fontSize='large' />
 			) : (
-				<FavoriteBorderOutlinedIcon sx={{ color: 'black' }} fontSize='large' />
+				<FavoriteBorderOutlinedIcon sx={{ color: 'red' }} fontSize='large' />
 			)}
 		</div>
 	)

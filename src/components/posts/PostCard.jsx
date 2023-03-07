@@ -68,6 +68,7 @@ const PostCard = ({ item }) => {
 								changeModalFlag(!modal, item)
 							}}
 							style={{ width: '35px', height: '35px' }}
+							sx={{ color: '#2e4c68' }}
 						/>
 						<div
 							style={{ color: 'black' }}
@@ -78,12 +79,14 @@ const PostCard = ({ item }) => {
 									fontSize='large'
 									className='addToFavorite'
 									onClick={() => deletePostInFavorite(item.id)}
+									sx={{ color: '#ffffff' }}
 								/>
 							) : (
 								<BookmarkTwoToneIcon
 									fontSize='large'
 									onClick={() => addPostToFavorite(item)}
 									className='addToFavorite'
+									sx={{ color: '#818181' }}
 								/>
 							)}
 						</div>

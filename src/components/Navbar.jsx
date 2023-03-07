@@ -36,11 +36,11 @@ const pages = [
 function ResponsiveAppBar() {
 	const { user, logout, checkAuthorization } = useAuth()
 
-	useEffect(() => {
-		if (localStorage.getItem('token')) {
-			checkAuthorization()
-		}
-	}, [])
+	// useEffect(() => {
+	// 	if (localStorage.getItem('token')) {
+	// 		checkAuthorization()
+	// 	}
+	// }, [])
 
 	const [anchorElNav, setAnchorElNav] = React.useState(null)
 	const [anchorElUser, setAnchorElUser] = React.useState(null)
@@ -124,7 +124,7 @@ function ResponsiveAppBar() {
 								<MenuItem onClick={handleCloseNavMenu}>
 									<Button
 										// className='testing'
-										onClick={() => navigate(user ? '/add' : '/login')}
+										onClick={() => navigate('/add')}
 										sx={{ color: 'black', display: 'block' }}
 									>
 										Add
@@ -133,7 +133,7 @@ function ResponsiveAppBar() {
 								<MenuItem>
 									<Button
 										// className='testing'
-										onClick={() => navigate(user ? '/favorites' : '/login')}
+										onClick={() => navigate('/favorites')}
 										sx={{ color: 'black', display: 'block' }}
 									>
 										Favorites
@@ -142,7 +142,7 @@ function ResponsiveAppBar() {
 								<MenuItem>
 									<Button
 										// className='testing'
-										onClick={() => navigate(user ? '/basket' : '/login')}
+										onClick={() => navigate('/basket')}
 										sx={{ color: 'black', display: 'block' }}
 									>
 										Basket
@@ -175,14 +175,14 @@ function ResponsiveAppBar() {
 						<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 							<Button
 								className='testing'
-								onClick={() => navigate(user ? '/add' : '/login')}
+								onClick={() => navigate('/add')}
 								sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
 							>
 								Add
 							</Button>
 							<Button
 								className='testing'
-								onClick={() => navigate(user ? '/favorites' : '/login')}
+								onClick={() => navigate('/favorites')}
 								sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
 							>
 								Favorites
@@ -191,7 +191,7 @@ function ResponsiveAppBar() {
 
 						<Button
 							className='testing'
-							onClick={() => navigate(user ? '/basket' : '/login')}
+							onClick={() => navigate('/basket')}
 							sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
 							// disabled={user ? false : true}
 						>
